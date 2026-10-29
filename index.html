@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="CareLynx is building a more connected healthcare experience for patients, hospitals, pharmacies and laboratories." />
+  <title>CareLynx | One Window. One Step.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/config.js" defer></script>
+  <script src="js/forms.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="CareLynx home"><img class="brand-logo" src="assets/images/carelynx-logo.png" alt="CareLynx Pvt. Ltd. logo"><span class="brand-wordmark">Care<span class="brand-accent">Lynx</span><small>One Window. One Step.</small></span></a>
+    <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNavigation">☰</button>
+    <nav class="nav-links" id="mainNavigation" aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#platform">Platform</a><a href="partnership.html">Become a Partner</a><a href="#contact">Contact</a>
+      <select id="languageSelect" aria-label="Choose language"><option value="en">EN</option><option value="gu">ગુજરાતી</option><option value="hi">हिन्दी</option></select>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">☾</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-glow glow-one"></div><div class="hero-glow glow-two"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="pulse-dot"></span> BETTER HEALTHCARE. TOGETHER.</p>
+        <h1 id="heroTitle">Connected care.<br><span>Clearer possibilities.</span></h1>
+        <p class="hero-lead" id="heroLead">CareLynx is building a connected healthcare ecosystem for patients, hospitals, pharmacies and laboratories.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#platform" id="exploreBtn">Explore the platform <span>↗</span></a><a class="button button-outline" href="#about">Discover CareLynx</a></div>
+        <div class="hero-note"><span class="note-icon">✓</span> Designed around connection, clarity and care</div>
+      </div>
+      <div class="hero-visual ecosystem-hero reveal" aria-label="Animated healthcare connection: patient to hospital to pharmacy to laboratory, all connected through CareLynx">
+        <!-- Self-contained animated connections: no JSON fetch, CDN or CORS dependency. -->
+        <div class="carelynx-network-art" aria-hidden="true">
+          <div class="carelynx-network-ring"></div>
+          <div class="carelynx-network-ring ring-inner"></div>
+          <span class="carelynx-link link-patient"></span>
+          <span class="carelynx-link link-hospital"></span>
+          <span class="carelynx-link link-pharmacy"></span>
+          <span class="carelynx-link link-lab"></span>
+          <span class="carelynx-orbit-dot"></span>
+        </div>
+        <!-- HTML labels remain accessible and match the existing CareLynx visual system. -->
+        <div class="hero-network-core"><span class="network-core-cross">✚</span><strong>CareLynx</strong><small>One connected platform</small></div>
+        <div class="network-node node-patient"><span>♙</span><b>Patient</b><small>Care begins here</small></div>
+        <div class="network-node node-hospital"><span>▦</span><b>Hospital</b><small>Care coordination</small></div>
+        <div class="network-node node-pharmacy"><span>✚</span><b>Pharmacy</b><small>Medicine support</small></div>
+        <div class="network-node node-lab"><span>⚗</span><b>Laboratory</b><small>Testing services</small></div>
+        <div class="network-caption"><span class="pulse-dot"></span> One platform. Connected care.</div>
+      </div>
+      <div class="hero-bottom"><span>One connected ecosystem</span><span class="bottom-line"></span><span>Built for a healthier tomorrow</span></div>
+    </section>
+
+    <section class="audience-strip" aria-label="CareLynx audiences"><div><span>♙</span><b>Patients</b><small>Care access</small></div><div><span>▦</span><b>Hospitals</b><small>Care coordination</small></div><div><span>✚</span><b>Pharmacies</b><small>Prescription workflows</small></div><div><span>⚗</span><b>Laboratories</b><small>Testing coordination</small></div></section>
+
+    <section class="section about-section" id="about"><div class="section-copy reveal"><p class="eyebrow">ABOUT CARELYNX</p><h2>A more connected way to think about healthcare.</h2><p>CareLynx Pvt. Ltd. is working toward a connected digital healthcare experience that helps different parts of the care journey work together more smoothly.</p><p>Our focus is to make healthcare workflows clearer, more coordinated and easier to navigate—while respecting privacy and appropriate access to information.</p><a class="text-link" href="#platform">Explore our approach <span>→</span></a></div><div class="about-art reveal"><div class="art-ring ring-one"></div><div class="art-ring ring-two"></div><div class="heart-symbol">♡<span>✚</span></div><div class="art-caption"><b>People at the centre</b><small>Technology with a human purpose</small></div></div></section>
+
+    <section class="section team-section" id="team"><div class="section-heading reveal"><p class="eyebrow">MEET THE TEAM</p><h2>People behind CareLynx.</h2><p>Meet the founders working to build a more connected healthcare experience.</p></div><div class="team-grid"><article class="team-card reveal"><div class="team-avatar" aria-hidden="true">BP</div><p class="eyebrow">FOUNDER</p><h3>Bhavy Parmar</h3><a class="team-email" href="mailto:bhavyparmar1527@gmail.com">bhavyparmar1527@gmail.com</a></article><article class="team-card reveal"><div class="team-avatar" aria-hidden="true">KC</div><p class="eyebrow">CO-FOUNDER</p><h3>Kaushal Chawda</h3><a class="team-email" href="mailto:kaushalkc8@gmail.com">kaushalkc8@gmail.com</a></article></div></section>
+
+    <section class="section platform-section" id="platform"><div class="section-heading reveal"><p class="eyebrow">THE CARELYNX PLATFORM</p><h2>Different roles. One shared direction.</h2><p>Explore how a connected ecosystem can support the people and teams involved in care.</p></div><div class="ecosystem reveal"><div class="eco-node"><span>♙</span><b>Patients</b><small>Navigate the care journey</small></div><i>→</i><div class="eco-node"><span>▦</span><b>Hospitals</b><small>Coordinate operations</small></div><i>→</i><div class="eco-node"><span>✚</span><b>Pharmacies</b><small>Support medicine workflows</small></div><i>→</i><div class="eco-node"><span>⚗</span><b>Laboratories</b><small>Support testing workflows</small></div></div>
+      <div class="solution-grid"><article class="solution-card reveal"><span class="card-icon">♙</span><h3>For Patients</h3><p>A clearer way to engage with healthcare services and manage the steps in a care journey.</p><ul><li>Patient-focused information</li><li>Appointment workflow concepts</li><li>Prescription-related coordination</li></ul><a href="#contact" class="text-link">Learn more →</a></article><article class="solution-card reveal"><span class="card-icon icon-blue">▦</span><h3>For Hospitals</h3><p>Digital workflow concepts designed to support teams and improve coordination.</p><ul><li>Hospital workflow support</li><li>Patient and service coordination</li><li>Operational visibility concepts</li></ul><a href="#partners" class="text-link">Partner with us →</a></article><article class="solution-card reveal"><span class="card-icon icon-violet">✚</span><h3>For Pharmacies</h3><p>Explore ways pharmacy-related steps could connect with the wider care journey.</p><ul><li>Prescription workflow concepts</li><li>Refill coordination ideas</li><li>Connected service workflows</li></ul><a href="#partners" class="text-link">Partner with us →</a></article><article class="solution-card reveal"><span class="card-icon icon-orange">⚗</span><h3>For Laboratories</h3><p>Ideas for clearer coordination between testing services and healthcare teams.</p><ul><li>Testing workflow concepts</li><li>Result coordination ideas</li><li>Service communication</li></ul><a href="#partners" class="text-link">Partner with us →</a></article></div><p class="status-note">Note: CareLynx applications and features are under development/testing. The examples above describe intended directions, not a claim that these services are currently live.</p>
+    </section>
+
+
+    <section class="section roadmap-section"><div class="section-heading reveal"><p class="eyebrow">OUR DIRECTION</p><h2>Building with purpose, step by step.</h2><p>A high-level roadmap that can be updated as milestones are confirmed.</p></div><div class="roadmap reveal"><div class="roadmap-item"><span class="roadmap-dot">01</span><small>PHASE 1</small><h3>Build & validate</h3><p>Refine the product, test core workflows and gather feedback.</p></div><div class="roadmap-item"><span class="roadmap-dot">02</span><small>PHASE 2</small><h3>Partner & improve</h3><p>Work with relevant healthcare partners and improve the experience.</p></div><div class="roadmap-item"><span class="roadmap-dot">03</span><small>PHASE 3</small><h3>Expand carefully</h3><p>Explore additional capabilities based on needs, readiness and trust.</p></div></div></section>
+
+    <section class="join-section join-cta" id="partners"><div class="join-intro reveal"><p class="eyebrow">GROW WITH CARELYNX</p><h2>Let's build a more connected healthcare future.</h2><p>Are you a hospital, pharmacy or laboratory interested in exploring a partnership? Start with a short welcome experience, then tell us about your organisation.</p><div class="join-points"><span>✓ Partnership conversations</span><span>✓ Shared learning and feedback</span><span>✓ Responsible, privacy-aware approach</span></div><a class="button button-primary" href="partnership.html">Become a Partner <span>↗</span></a></div><div class="join-visual reveal" aria-hidden="true"><div class="join-orbit"></div><div class="join-center">✚<b>CareLynx</b></div><span class="join-chip chip-hospital">▦ Hospital</span><span class="join-chip chip-pharmacy">✚ Pharmacy</span><span class="join-chip chip-lab">⚗ Laboratory</span></div></section>
+
+    <section class="section faq-section" id="faq"><div class="section-heading reveal"><p class="eyebrow">QUICK ANSWERS</p><h2>Frequently asked questions</h2></div><div class="faq-list reveal"><details><summary>Is CareLynx available to use today?</summary><p>The applications are described as being in development/testing. Please contact CareLynx for the latest confirmed status.</p></details><details><summary>Who is CareLynx being designed for?</summary><p>The intended ecosystem includes patients, hospitals, pharmacies and laboratories.</p></details><details><summary>How can my organisation connect with CareLynx?</summary><p>Use the partnership inquiry form to get in touch. Messages are sent through our Google Apps Script email endpoint after setup.</p></details><details><summary>How does CareLynx approach privacy?</summary><p>Privacy and appropriate, role-based access should be central to the platform. Review the final data practices and legal documents before making specific compliance claims.</p></details></div></section>
+
+    <section class="contact-section" id="contact"><div class="contact-copy reveal"><p class="eyebrow">CONTACT CARELYNX</p><h2>Have a question or an idea?</h2><p>We would like to hear from healthcare professionals and organisations interested in a more connected care experience.</p><div class="contact-detail"><span>✉</span><div><b>Official email</b><a class="contact-email" href="mailto:prthvrjjdv@gmail.com">prthvrjjdv@gmail.com</a></div></div><div class="contact-detail"><span>⌖</span><div><b>Vadodara, Gujarat, India</b><small>Public business address to be confirmed</small></div></div></div><form class="form-card contact-form reveal" id="contactForm" action="#" data-form-backend="google-apps-script" method="POST" accept-charset="UTF-8">
+      <input type="hidden" name="form_type" value="Contact Inquiry">
+      <input type="hidden" name="source_page" value=""><h3>Send a message</h3><label>Your name *<input maxlength="100" name="name" required placeholder="Your name"></label><label>Email address *<input name="email" type="email" required placeholder="you@example.com"></label><label>Message *<textarea maxlength="3000" name="message" rows="4" required placeholder="How can we help?"></textarea></label><button class="button button-primary" type="submit">Send message <span>↗</span></button><p class="form-hint">General inquiries only. Please do not share patient details or medical records. Your inquiry will be sent to the CareLynx team by our Google-hosted email service.</p><p class="form-result" role="status" aria-live="polite" aria-atomic="true"></p></form></section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-main"><a class="brand footer-brand" href="#home"><img class="brand-logo footer-logo" src="assets/images/carelynx-logo.png" alt="CareLynx Pvt. Ltd. logo"><span class="brand-wordmark">Care<span class="brand-accent">Lynx</span><small>One Window. One Step.</small></span></a><p>Smarter connections for a more coordinated healthcare future.</p><div class="footer-links"><div><b>Explore</b><a href="#about">About</a><a href="#platform">Platform</a></div><div><b>Connect</b><a href="partnership.html">Partnerships</a><a href="#team">Our Team</a><a href="#contact">Contact</a><a href="https://www.instagram.com/carelynxpvtltd?obrf=bnB2cTd5MTd0ZzYx" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/company/carelynx-pvt-ltd/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="#faq">FAQs</a></div><div><b>Legal</b><a href="#privacy-note">Privacy policy*</a><a href="#privacy-note">Terms*</a><a href="#privacy-note">Data protection*</a></div></div></div><div class="footer-bottom"><span>© <span id="year"></span> CareLynx Pvt. Ltd. All rights reserved.</span><span id="privacy-note">*Publish reviewed legal documents before launch.</span><a href="#home">Back to top ↑</a></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <!-- Lottie load diagnostics and fallback handling. -->
+</body>
+</html>
