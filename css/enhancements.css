@@ -1,0 +1,1615 @@
+/* ==============================================================
+   HEADER: two-level icon and label layout; existing theme colors
+   ============================================================== */
+.site-header .nav-links > a[data-nav-icon] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 12px;
+  line-height: 1.3;
+  white-space: nowrap;
+  min-height: 60px;
+}
+.site-header .nav-links > a[data-nav-icon]::before {
+  display: block !important;
+  width: 21px;
+  height: 21px;
+  flex: 0 0 21px;
+}
+.site-header .nav-links > a.is-active {
+  color: var(--primary, #0d9488);
+}
+.site-header .nav-links > a::after {
+  bottom: 0;
+}
+.site-header .theme-toggle {
+  font-size: 22px;
+  min-width: 38px;
+}
+@media (max-width: 900px) {
+  .site-header .nav-links > a[data-nav-icon] {
+    min-height: 65px;
+  }
+  .site-header .nav-links.open {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+}
+/* ................................ END HEADER ............................... */
+/* GALLERY: accessible horizontal moving track; pauses on hover/focus */
+.care-gallery {
+  padding: 60px 0;
+  overflow: hidden;
+}
+.care-gallery .section-heading {
+  padding: 0 5%;
+  margin-bottom: 24px;
+}
+.gallery-window {
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 4%,
+    black 96%,
+    transparent
+  );
+}
+.gallery-track {
+  display: flex;
+  width: max-content;
+  gap: 20px;
+  animation: care-marquee 35s linear infinite;
+  padding: 12px 0;
+}
+.gallery-window:hover .gallery-track,
+.gallery-window:focus-within .gallery-track {
+  animation-play-state: paused;
+}
+.gallery-card {
+  width: min(72vw, 280px);
+  min-height: 165px;
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  background: var(--surface, #f3faf9);
+  border: 1px solid rgba(80, 150, 150, 0.22);
+  color: inherit;
+  white-space: normal;
+}
+.gallery-card .gallery-symbol {
+  font-size: 32px;
+}
+.gallery-card strong {
+  font-size: 19px;
+}
+.gallery-card p {
+  font-size: 13px;
+  margin: 0;
+  line-height: 1.5;
+}
+@keyframes care-marquee {
+  to {
+    transform: translateX(calc(-50% - 10px));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gallery-track {
+    animation: none;
+  }
+  .gallery-window {
+    overflow-x: auto;
+  }
+}
+/* ................................ END GALLERY .............................. */
+/* TEAM: image on left, information on right */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.team-section .team-card {
+  display: grid;
+  grid-template-columns: minmax(120px, 40%) 1fr;
+  align-items: stretch;
+  gap: 0;
+  overflow: hidden;
+  padding: 0;
+  text-align: left;
+}
+.team-photo {
+  min-height: 255px;
+  background: linear-gradient(
+    135deg,
+    rgba(12, 148, 136, 0.17),
+    rgba(80, 140, 200, 0.12)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.team-photo-placeholder {
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--primary, #0d9488);
+}
+.team-info {
+  padding: 26px 20px;
+  min-width: 0;
+}
+.team-info h3 {
+  margin: 8px 0;
+}
+.team-info p {
+  line-height: 1.6;
+  font-size: 13px;
+}
+.team-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+.team-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.team-social svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+}
+.team-email {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 1050px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 500px) {
+  .team-section .team-card {
+    grid-template-columns: 36% 64%;
+  }
+  .team-info {
+    padding: 16px 12px;
+  }
+  .team-photo {
+    min-height: 235px;
+  }
+}
+/* ................................ END TEAM ................................ */
+/* HERO: Three.js canvas with positioned HTML service labels */
+.hero-3d-stage {
+  position: relative;
+  min-height: 480px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 26px;
+}
+.hero-3d-stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  touch-action: pan-y;
+}
+.hero-3d-label {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  text-align: center;
+  background: var(--surface, rgba(255, 255, 255, 0.88));
+  border: 1px solid rgba(50, 150, 145, 0.3);
+  border-radius: 13px;
+  padding: 9px 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-size: 12px;
+  font-weight: 700;
+  min-width: 95px;
+}
+.hero-3d-label small {
+  display: block;
+  font-size: 10px;
+  font-weight: 400;
+  margin-top: 3px;
+}
+.hero-3d-label.core-label {
+  font-size: 19px;
+  min-width: 135px;
+}
+body.dark .hero-3d-label {
+  background: #132b34;
+  color: #fff;
+}
+.hero-3d-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+@media (max-width: 650px) {
+  .hero-3d-stage {
+    min-height: 380px;
+  }
+  .hero-3d-label {
+    font-size: 10px;
+    min-width: 72px;
+    padding: 7px;
+  }
+  .hero-3d-label.core-label {
+    font-size: 14px;
+    min-width: 95px;
+  }
+}
+/* ................................ END HERO ................................ */
+
+/* ============================================================
+   START: CARELYNX FOOTER DESIGN
+   Desktop: Four columns
+   Mobile: Centered brand and two-column links
+   ============================================================ */
+
+.site-footer {
+  --footer-bg: var(--navy, #071b35);
+  --footer-accent: var(--teal, #12c5b2);
+  --footer-text: #b8cad7;
+
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 75px 5% 25px;
+  font-family: "Poppins", sans-serif;
+}
+
+.site-footer * {
+  box-sizing: border-box;
+}
+
+/* MAIN CONTAINER */
+
+.site-footer .footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.7fr 1fr 1fr 1.2fr;
+  gap: clamp(25px, 3.5vw, 65px);
+
+  align-items: start;
+}
+
+/* ============================================================
+   SECTION 1: BRAND AREA
+   ============================================================ */
+
+.site-footer .footer-brand-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.site-footer .footer-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.site-footer .footer-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.site-footer .footer-brand-area h3 {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 5px;
+}
+
+.site-footer .footer-tagline {
+  color: var(--footer-accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0 0 24px;
+}
+
+.site-footer .footer-description {
+  max-width: 320px;
+  color: var(--footer-text);
+  font-size: 13px;
+  line-height: 1.9;
+  margin: 0 0 25px;
+}
+
+/* SOCIAL ICONS */
+
+.site-footer .footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-footer .footer-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 43px;
+  height: 43px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+
+  color: var(--footer-accent);
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.site-footer .footer-socials a:hover {
+  background: var(--footer-accent);
+  color: var(--footer-bg);
+  transform: translateY(-4px);
+}
+
+.site-footer .footer-socials svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* ................ END BRAND AREA ................ */
+
+/* ============================================================
+   SECTION 2: FOOTER LINK COLUMNS
+   ============================================================ */
+
+.site-footer .footer-column {
+  min-width: 0;
+}
+
+.site-footer .footer-column h4 {
+  position: relative;
+  display: inline-block;
+
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+
+  margin: 12px 0 28px;
+  padding-bottom: 15px;
+}
+
+/* Underline below headings */
+.site-footer .footer-column h4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 38px;
+  height: 2px;
+  background: var(--footer-accent);
+}
+
+/* Remove list defaults */
+.site-footer .footer-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Link alignment */
+.site-footer .footer-column li {
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer .footer-column a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+
+  color: var(--footer-text);
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.6;
+
+  transition: color 0.25s ease;
+}
+
+/* Small arrow before links */
+.site-footer .footer-column a::before {
+  content: "›";
+  color: var(--footer-accent);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.site-footer .footer-column a:hover {
+  color: var(--footer-accent);
+}
+
+/* ................ END LINK COLUMNS ................ */
+
+/* ============================================================
+   SECTION 3: FOOTER BOTTOM
+   ============================================================ */
+
+.site-footer .footer-bottom {
+  max-width: 1200px;
+  margin: 55px auto 0;
+  padding-top: 23px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.site-footer .footer-bottom p {
+  margin: 0;
+  color: var(--footer-text);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* ................ END FOOTER BOTTOM ................ */
+
+/* ============================================================
+   TABLET VIEW
+   ============================================================ */
+
+@media (max-width: 950px) {
+  .site-footer .footer-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+  }
+
+  .site-footer .footer-brand-area {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ................ END TABLET VIEW ................ */
+
+/* ============================================================
+   MOBILE VIEW — REFERENCE-STYLE LAYOUT
+   ============================================================ */
+
+@media (max-width: 700px) {
+  .site-footer {
+    padding: 55px 22px 25px;
+  }
+
+  .site-footer .footer-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 25px;
+    row-gap: 40px;
+  }
+
+  /* Center the brand */
+  .site-footer .footer-brand-area {
+    grid-column: 1 / -1;
+    width: 100%;
+
+    align-items: center;
+    text-align: center;
+  }
+
+  .site-footer .footer-brand-logo {
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  .site-footer .footer-logo {
+    width: 75px;
+    height: 75px;
+  }
+
+  .site-footer .footer-brand-area h3 {
+    font-size: 25px;
+  }
+
+  .site-footer .footer-tagline {
+    font-size: 12px;
+    margin-bottom: 25px;
+  }
+
+  .site-footer .footer-description {
+    max-width: 360px;
+    margin: 0 auto 25px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .site-footer .footer-socials {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  /* Company and Explore side by side */
+  .site-footer .footer-company {
+    grid-column: 1;
+  }
+
+  .site-footer .footer-explore {
+    grid-column: 2;
+  }
+
+  /* Policy section across the full width */
+  .site-footer .footer-policy {
+    grid-column: 1 / -1;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .site-footer .footer-policy ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 20px;
+  }
+
+  /* Consistent mobile headings */
+  .site-footer .footer-column h4 {
+    font-size: 15px;
+    margin: 0 0 25px;
+    padding-bottom: 14px;
+  }
+
+  .site-footer .footer-column ul {
+    gap: 17px;
+  }
+
+  .site-footer .footer-column a {
+    font-size: 12px;
+    gap: 7px;
+  }
+
+  /* Bottom copyright */
+  .site-footer .footer-bottom {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+
+    margin-top: 45px;
+    padding-top: 25px;
+  }
+}
+
+/* ................ END MOBILE VIEW ................ */
+
+/* ============================================================
+   SMALL MOBILE VIEW
+   ============================================================ */
+
+@media (max-width: 390px) {
+  .site-footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .site-footer .footer-container {
+    column-gap: 16px;
+  }
+
+  .site-footer .footer-column a {
+    font-size: 11px;
+  }
+}
+
+/* ................ END CARELYNX FOOTER DESIGN ................ */
+
+/* ................................ END FOOTER .............................. */
+
+/* ============================================================
+   START: LIVING HEALTHCARE CITY
+   Three.js 3D hero canvas and responsive layout.
+   ============================================================ */
+
+.hero-visual.care-city-visual {
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  min-height: 510px;
+  margin: 0;
+  padding: 0;
+  display: block;
+  transform: none;
+  overflow: visible;
+}
+
+.care-city-stage {
+  position: relative;
+  width: 100%;
+  height: 510px;
+  min-height: 510px;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 24px;
+}
+
+.care-city-stage canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  touch-action: pan-y;
+}
+
+.care-city-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  padding: 20px;
+}
+
+@media (max-width: 900px) {
+  .hero-visual.care-city-visual {
+    min-height: 440px;
+  }
+
+  .care-city-stage {
+    height: 440px;
+    min-height: 440px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-visual.care-city-visual {
+    min-height: 380px;
+    width: 100%;
+    margin: 0;
+    transform: none;
+  }
+
+  .care-city-stage {
+    height: 380px;
+    min-height: 380px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-visual.care-city-visual {
+    min-height: 330px;
+    transform: none;
+  }
+
+  .care-city-stage {
+    height: 330px;
+    min-height: 330px;
+  }
+}
+
+/* ................ END OF LIVING HEALTHCARE CITY ............... */
+
+/* ============================================================
+   CARELYNX 3D HERO — DESKTOP + MOBILE SIZE FIX
+   ============================================================ */
+
+.hero-visual.care-city-visual {
+  width: 100%;
+  max-width: none;
+  min-height: 600px;
+  overflow: visible;
+}
+
+.care-city-stage {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.care-city-stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: grab;
+}
+
+.care-city-stage canvas:active {
+  cursor: grabbing;
+}
+
+/* Laptop */
+@media (max-width: 1200px) {
+  .hero-visual.care-city-visual {
+    min-height: 530px;
+  }
+
+  .care-city-stage {
+    height: 530px;
+    min-height: 530px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .hero-visual.care-city-visual {
+    min-height: 480px;
+  }
+
+  .care-city-stage {
+    height: 480px;
+    min-height: 480px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .hero-visual.care-city-visual {
+    width: 100%;
+    min-height: 460px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .care-city-stage {
+    width: 100%;
+    height: 460px;
+    min-height: 460px;
+    border-radius: 16px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 390px) {
+  .hero-visual.care-city-visual {
+    min-height: 410px;
+  }
+
+  .care-city-stage {
+    height: 410px;
+    min-height: 410px;
+  }
+}
+
+/* ................. END 3D HERO SIZE FIX ................ */
+
+/* ============================================================
+   CARELYNX 3D CITY — LARGER ANIMATION VIEWPORT
+   ============================================================ */
+
+/* Allow the hero visual to use more available space */
+.hero-visual.care-city-visual {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  min-height: 750px;
+  overflow: visible !important;
+}
+
+/* Increase the actual 3D canvas area */
+.care-city-stage {
+  position: relative;
+  width: 100%;
+  height: 750px;
+  min-height: 750px;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.care-city-stage canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  touch-action: none;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .hero-visual.care-city-visual {
+    min-height: 600px;
+  }
+
+  .care-city-stage {
+    height: 600px;
+    min-height: 600px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .hero-visual.care-city-visual {
+    min-height: 520px;
+  }
+
+  .care-city-stage {
+    height: 520px;
+    min-height: 520px;
+    border-radius: 16px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 390px) {
+  .hero-visual.care-city-visual {
+    min-height: 470px;
+  }
+
+  .care-city-stage {
+    height: 470px;
+    min-height: 470px;
+  }
+}
+
+/* ................. END 3D CITY VIEWPORT FIX ................ */
+
+/* ============================================================
+   CARELYNX 3D CITY — RESPONSIVE VIEWPORT
+   ============================================================ */
+
+.hero-visual.care-city-visual {
+  width: 100%;
+  min-width: 0;
+  overflow: visible;
+}
+
+.care-city-stage {
+  width: 100%;
+  height: clamp(500px, 55vw, 760px);
+  overflow: hidden;
+}
+
+.care-city-stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+@media (max-width: 700px) {
+  .care-city-stage {
+    height: 480px;
+  }
+}
+
+/* ................ END RESPONSIVE VIEWPORT ................ */
+
+/* ============================================================
+   START: CARELYNX FOOTER ALIGNMENT & HOVER IMPROVEMENTS
+   Full width desktop, balanced mobile, animated link arrows.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   SECTION 1: FULL WIDTH DESKTOP FOOTER
+   ------------------------------------------------------------ */
+
+.site-footer {
+  width: 100%;
+  padding: 75px clamp(24px, 5vw, 100px) 25px;
+  box-sizing: border-box;
+}
+
+.site-footer .footer-container {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+
+  display: grid;
+
+  /* Balanced distribution across available width */
+  grid-template-columns:
+    minmax(260px, 1.45fr)
+    repeat(3, minmax(0, 1fr));
+
+  column-gap: clamp(35px, 4vw, 90px);
+  row-gap: 40px;
+
+  align-items: start;
+  justify-content: space-between;
+}
+
+/* Brand column */
+.site-footer .footer-brand-area {
+  width: 100%;
+  max-width: 400px;
+  min-width: 0;
+  align-items: flex-start;
+}
+
+.site-footer .footer-description {
+  max-width: 360px;
+  line-height: 1.9;
+}
+
+/* All quick link columns */
+.site-footer .footer-column {
+  width: 100%;
+  min-width: 0;
+  justify-self: stretch;
+}
+
+.site-footer .footer-column h4 {
+  margin-top: 12px;
+  margin-bottom: 28px;
+}
+
+/* Consistent vertical spacing */
+.site-footer .footer-column ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+/* Full width bottom copyright */
+.site-footer .footer-bottom {
+  width: 100%;
+  max-width: none;
+  margin: 55px auto 0;
+  padding-top: 24px;
+  justify-content: space-between;
+}
+
+/* ................. END DESKTOP ALIGNMENT ................ */
+
+/* ------------------------------------------------------------
+   SECTION 2: ARROW AND TEXT HOVER EFFECT
+   ------------------------------------------------------------ */
+
+/* ============================================================
+   CARELYNX FOOTER — CLEAN ARROW HOVER FIX
+   No overlapping, smooth movement and white hover color.
+   ============================================================ */
+
+/* Footer links */
+.site-footer .footer-column a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: fit-content;
+  gap: 10px;
+
+  color: var(--footer-text, #b8cad7);
+  text-decoration: none;
+  white-space: normal;
+
+  transition: color 0.3s ease;
+}
+
+/* Arrow */
+.site-footer .footer-column a::before {
+  content: "›";
+  display: inline-block;
+  flex: 0 0 10px;
+
+  width: 10px;
+  margin: 0;
+  padding: 0;
+
+  color: var(--footer-accent, #12c5b2);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1;
+
+  transform: translateX(0);
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Hover: change text to white */
+.site-footer .footer-column a:hover,
+.site-footer .footer-column a:focus-visible {
+  color: #ffffff;
+}
+
+/* Hover: move arrow closer without overlapping text */
+.site-footer .footer-column a:hover::before,
+.site-footer .footer-column a:focus-visible::before {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+/* Keyboard focus */
+.site-footer .footer-column a:focus-visible {
+  outline: 2px solid var(--footer-accent, #12c5b2);
+  outline-offset: 4px;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .site-footer .footer-column a {
+    gap: 8px;
+  }
+
+  .site-footer .footer-column a::before {
+    flex-basis: 9px;
+    width: 9px;
+    font-size: 17px;
+  }
+
+  .site-footer .footer-column a:hover::before {
+    transform: translateX(2px);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .site-footer .footer-column a,
+  .site-footer .footer-column a::before {
+    transition: none;
+  }
+}
+
+/* ................ END FOOTER ARROW HOVER FIX ................ */
+
+/* ................. END ARROW HOVER EFFECT ................ */
+
+/* ------------------------------------------------------------
+   SECTION 3: TABLET ALIGNMENT
+   ------------------------------------------------------------ */
+
+@media (min-width: 701px) and (max-width: 1050px) {
+  .site-footer {
+    padding: 60px 5% 25px;
+  }
+
+  .site-footer .footer-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 30px;
+    row-gap: 45px;
+  }
+
+  .site-footer .footer-brand-area {
+    grid-column: 1 / -1;
+    max-width: 550px;
+  }
+}
+
+/* ................. END TABLET ALIGNMENT ................ */
+
+/* ------------------------------------------------------------
+   SECTION 4: MOBILE BALANCED FOOTER
+   ------------------------------------------------------------ */
+
+@media (max-width: 700px) {
+  .site-footer {
+    padding: 50px 20px 25px;
+  }
+
+  .site-footer .footer-container {
+    width: 100%;
+    max-width: none;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    column-gap: 20px;
+    row-gap: 40px;
+
+    align-items: start;
+    justify-content: stretch;
+  }
+
+  /* Center logo, tagline and description */
+  .site-footer .footer-brand-area {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .site-footer .footer-brand-logo {
+    justify-content: center;
+  }
+
+  .site-footer .footer-description {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto 25px;
+
+    text-align: center;
+  }
+
+  .site-footer .footer-socials {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Equal width Company and Explore columns */
+  .site-footer .footer-company {
+    grid-column: 1;
+    justify-self: stretch;
+  }
+
+  .site-footer .footer-explore {
+    grid-column: 2;
+    justify-self: stretch;
+  }
+
+  .site-footer .footer-company,
+  .site-footer .footer-explore {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Consistent link spacing */
+  .site-footer .footer-column ul {
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  .site-footer .footer-column li {
+    width: 100%;
+  }
+
+  .site-footer .footer-column a {
+    font-size: 12px;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+  }
+
+  /* Policy section */
+  .site-footer .footer-policy {
+    grid-column: 1 / -1;
+    width: 100%;
+
+    padding-top: 25px;
+    margin: 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .site-footer .footer-policy ul {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+
+  /* Center copyright */
+  .site-footer .footer-bottom {
+    width: 100%;
+    margin-top: 45px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+    text-align: center;
+  }
+}
+
+/* ................. END MOBILE ALIGNMENT ................ */
+
+/* ------------------------------------------------------------
+   SECTION 5: SMALL MOBILE FIX
+   ------------------------------------------------------------ */
+
+@media (max-width: 390px) {
+  .site-footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .site-footer .footer-container {
+    column-gap: 16px;
+  }
+
+  .site-footer .footer-column a {
+    font-size: 11px;
+  }
+
+  .site-footer .footer-policy ul {
+    column-gap: 16px;
+  }
+}
+
+/* Respect users who prefer reduced animation */
+@media (prefers-reduced-motion: reduce) {
+  .site-footer .footer-column a,
+  .site-footer .footer-column a::before {
+    transition: none;
+  }
+}
+
+/* ................. END CARELYNX FOOTER IMPROVEMENTS .......... */
+
+/* ============================================================
+   CARELYNX MOBILE FOOTER — CENTER ALIGNMENT FIX
+   ============================================================ */
+
+@media (max-width: 700px) {
+  /* Center entire footer content */
+  .site-footer .footer-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px 16px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Center logo, tagline and social icons */
+  .site-footer .footer-brand-area {
+    grid-column: 1 / -1;
+    align-items: center;
+    text-align: center;
+  }
+
+  .site-footer .footer-socials {
+    justify-content: center;
+  }
+
+  /* Center Company, Explore and Policy columns */
+  .site-footer .footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .site-footer .footer-company {
+    grid-column: 1;
+  }
+
+  .site-footer .footer-explore {
+    grid-column: 2;
+  }
+
+  /* Center section headings and underline */
+  .site-footer .footer-column h4 {
+    text-align: center;
+  }
+
+  .site-footer .footer-column h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Center all links */
+  .site-footer .footer-column ul {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .site-footer .footer-column li {
+    display: flex;
+    justify-content: center;
+  }
+
+  .site-footer .footer-column a {
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Policy and Contact centered */
+  .site-footer .footer-policy {
+    grid-column: 1 / -1;
+    align-items: center;
+  }
+
+  .site-footer .footer-policy ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    gap: 20px 12px;
+  }
+
+  .site-footer .footer-policy li {
+    justify-content: center;
+  }
+
+  /* Center copyright */
+  .site-footer .footer-bottom {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* ............... END MOBILE FOOTER CENTER FIX ............... */
+
+/* ============================================================
+   CARELYNX TEAM — FOUNDER & CO-FOUNDER PHOTOS
+   ============================================================ */
+
+/* Photo container */
+.team-card .team-photo {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 250px;
+  border-radius: 16px;
+}
+
+/* Actual team photo */
+.team-card .team-member-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  object-fit: cover;
+  object-position: center 25%;
+  border-radius: inherit;
+  transition: transform 0.5s ease;
+}
+
+/* Smooth hover zoom */
+.team-card:hover .team-member-img {
+  transform: scale(1.04);
+}
+
+/* Mobile responsive */
+@media (max-width: 700px) {
+  .team-card .team-photo {
+    width: 100%;
+    min-height: 280px;
+  }
+
+  .team-card .team-member-img {
+    min-height: 280px;
+    object-position: center top;
+  }
+}
+
+/* ................. END CARELYNX TEAM PHOTOS ................ */
+
+/* ============================================================
+   CARELYNX FOOTER — DEVELOPER CREDITS
+   Desktop and mobile responsive profile photos.
+   Uses existing website colors.
+   ============================================================ */
+
+/* SECTION 1: FOOTER BOTTOM */
+
+.site-footer .footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  width: 100%;
+  text-align: center;
+}
+
+.site-footer .footer-copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.site-footer .footer-copyright p {
+  margin: 0;
+}
+
+/* ............ END SECTION 1 ............ */
+
+/* SECTION 2: DEVELOPER DETAILS */
+
+.site-footer .footer-developers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.site-footer .developer-heading {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.site-footer .developer-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.site-footer .developer-person {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.site-footer .developer-name {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.site-footer .developer-and {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+/* ............ END SECTION 2 ............ */
+
+/* SECTION 3: ROUND PROFILE PHOTOS */
+
+.site-footer .developer-avatar {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  background: #123550;
+}
+
+.site-footer .developer-avatar img {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.site-footer .developer-initials {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.site-footer .developer-person:hover img {
+  transform: scale(1.08);
+}
+
+/* ............ END SECTION 3 ............ */
+
+/* SECTION 4: MOBILE RESPONSIVE */
+
+@media (max-width: 700px) {
+  .site-footer .footer-bottom {
+    gap: 24px;
+    padding-top: 24px;
+  }
+
+  .site-footer .footer-developers {
+    gap: 14px;
+  }
+
+  .site-footer .developer-list {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .site-footer .developer-person {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .site-footer .developer-avatar {
+    width: 52px;
+    height: 52px;
+  }
+
+  .site-footer .developer-name {
+    font-size: 11px;
+    white-space: normal;
+  }
+
+  .site-footer .developer-and {
+    align-self: center;
+    margin-top: -18px;
+  }
+}
+
+/* ............ END SECTION 4 ............ */
+
+/* SECTION 5: SMALL MOBILE SCREENS */
+
+@media (max-width: 360px) {
+  .site-footer .developer-list {
+    gap: 8px;
+  }
+
+  .site-footer .developer-avatar {
+    width: 44px;
+    height: 44px;
+  }
+
+  .site-footer .developer-name {
+    font-size: 10px;
+  }
+}
+
+/* ............ END SECTION 5 ............ */
+
+/* ............ END CARELYNX DEVELOPER CREDITS ............ */
+
+/* ============================================================
+   FOOTER DEVELOPER — LINKEDIN HOVER EFFECT
+   ============================================================ */
+
+.site-footer .developer-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.site-footer .developer-link .developer-name {
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.site-footer .developer-link:hover .developer-name,
+.site-footer .developer-link:focus-visible .developer-name {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.site-footer .developer-link:hover .developer-avatar {
+  border-color: #ffffff;
+}
+
+.site-footer .developer-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
+  border-radius: 6px;
+}
+
+/* ............ END DEVELOPER LINKEDIN HOVER ............ */

@@ -1,0 +1,81 @@
+/* Hero logo styles extracted from index.html */
+/* Center Logo - No Box */
+    /* Central wrapper: makes the hero logo float without a card or box. */
+    .ecosystem-hero .hero-network-core {
+      position: relative;
+      z-index: 5;
+
+      width: 205px !important;
+      height: auto !important;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0 !important;
+      margin: 0 !important;
+
+      background: transparent !important;
+      background-color: transparent !important;
+
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+
+      overflow: visible !important;
+
+      animation: logoFloat 5s ease-in-out infinite;
+    }
+
+    /* Transparent Glossy Logo */
+    /* The actual PNG/image: maintains aspect ratio and adds a soft shadow. */
+    .ecosystem-hero .hero-network-logo {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      object-fit: contain;
+
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+
+      filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+    }
+
+    /* Floating Animation */
+    /* Vertical motion shared by the central logo wrapper. */
+    @keyframes logoFloat {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-7px);
+      }
+    }
+
+    /* Tablet */
+    /* Responsive breakpoints progressively reduce the logo size. */
+    @media (max-width: 900px) {
+      .ecosystem-hero .hero-network-core {
+        width: 175px !important;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 700px) {
+      .ecosystem-hero .hero-network-core {
+        width: 150px !important;
+      }
+    }
+
+    /* Small Mobile */
+    @media (max-width: 390px) {
+      .ecosystem-hero .hero-network-core {
+        width: 130px !important;
+      }
+    }
