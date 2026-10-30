@@ -1613,3 +1613,103 @@ body.dark .hero-3d-label {
 }
 
 /* ............ END DEVELOPER LINKEDIN HOVER ............ */
+
+/* ============================================================
+   START: CARELYNX 3D MOBILE SCROLL FIX
+
+   Allow normal vertical page scrolling over the 3D canvas.
+   Preserve horizontal touch interaction with the 3D city.
+   Desktop interaction remains unchanged.
+   ============================================================ */
+
+@media (max-width: 700px) {
+  /* Allow page scrolling in the 3D hero section */
+  .hero-visual.care-city-visual,
+  .care-city-stage {
+    touch-action: pan-y !important;
+  }
+
+  /* Fix canvas capturing vertical scrolling */
+  .care-city-stage canvas {
+    touch-action: pan-y !important;
+    overscroll-behavior: auto;
+  }
+}
+
+/* ................. END 3D MOBILE SCROLL FIX ................ */
+
+/* ============================================================
+   CARELYNX 3D CITY — LARGER RESPONSIVE VIEW
+   Preserve original colors and graphics.
+   ============================================================ */
+
+/* DESKTOP */
+
+@media (min-width: 901px) {
+  .hero-visual.care-city-visual {
+    width: 100%;
+    min-height: 600px;
+  }
+
+  .care-city-stage {
+    width: 100%;
+    height: 650px;
+    min-height: 650px;
+  }
+}
+
+/* ................ END DESKTOP VIEW ................ */
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  /* Use the full mobile screen width */
+  .hero-visual.care-city-visual {
+    width: 100vw;
+    max-width: none;
+    min-width: 0;
+    min-height: 440px;
+
+    margin-left: calc(50% - 50vw);
+    margin-right: 0;
+
+    padding: 0;
+    overflow: hidden;
+  }
+
+  /* Large mobile 3D viewing area */
+  .care-city-stage {
+    width: 100%;
+    height: 440px;
+    min-height: 440px;
+
+    overflow: hidden;
+    border-radius: 0;
+  }
+
+  /* Keep page scrolling functional */
+  .care-city-stage canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+
+    touch-action: pan-y !important;
+  }
+}
+
+/* ................ END MOBILE VIEW ................ */
+
+/* SMALL MOBILE */
+
+@media (max-width: 390px) {
+  .hero-visual.care-city-visual {
+    min-height: 400px;
+  }
+
+  .care-city-stage {
+    height: 400px;
+    min-height: 400px;
+  }
+}
+
+/* ............ END RESPONSIVE 3D VIEW ............ */
