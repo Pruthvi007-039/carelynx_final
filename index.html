@@ -45,6 +45,18 @@
     <script src="js/forms.js" defer></script>
     <!-- Site interactions such as menu, language and theme. -->
     <script src="js/script.js" defer></script>
+    <!-- Interactive Gallery and 10 Problems Showcase -->
+<!-- ============================================================
+     START: CARELYNX GALLERY & 10 PROBLEMS SCRIPTS
+     ============================================================ -->
+
+<!-- Interactive photo gallery -->
+<script src="js/gallery-showcase.js" defer></script>
+
+<!-- 10 Problems buttons and unique Three.js models -->
+<script src="js/problems-3d.js" defer></script>
+
+<!-- ............ END GALLERY & PROBLEMS SCRIPTS ............ -->
     <!-- Highlights the currently visible page section while scrolling. -->
     <script src="js/navigation.js" defer></script>
     <!-- Three.js is imported directly inside hero3d.js -->
@@ -74,7 +86,7 @@
           alt="CareLynx Pvt. Ltd. logo"
         /><span class="brand-wordmark"
           >Care<span class="brand-accent">Lynx</span
-          ><small>One Window. One Step.</small></span
+          ><small>One window , one step , total healthcare solutions</small></span
         ></a
       >
       <!-- Hamburger button for small-screen navigation. -->
@@ -132,11 +144,11 @@
             <span class="pulse-dot"></span> BETTER HEALTHCARE. TOGETHER.
           </p>
           <h1 id="heroTitle">
-            Connected care.<br /><span>Clearer possibilities.</span>
+            One Hospital.<br /><span>One Connected System.</span>
           </h1>
           <p class="hero-lead" id="heroLead">
-            CareLynx is building a connected healthcare ecosystem for patients,
-            hospitals, pharmacies and laboratories.
+            Your hospital runs on people. Carelynx makes everything
+else run itself
           </p>
           <!-- Primary links scroll to Platform and About. -->
           <div class="hero-actions">
@@ -190,18 +202,161 @@
            START: AUDIENCE STRIP
            PURPOSE: Quick overview of patients, hospitals, pharmacies and laboratories.
            =============================================================== -->
-      <section class="audience-strip" aria-label="CareLynx audiences">
-        <div><span>♙</span><b>Patients</b><small>Care access</small></div>
-        <div>
-          <span>▦</span><b>Hospitals</b><small>Care coordination</small>
-        </div>
-        <div>
-          <span>✚</span><b>Pharmacies</b><small>Prescription workflows</small>
-        </div>
-        <div>
-          <span>⚗</span><b>Laboratories</b><small>Testing coordination</small>
-        </div>
-      </section>
+     
+<!-- ============================================================
+     START: CARELYNX CORE VALUES STRIP
+     Connected | Smart | Simple
+     Replaces old Patients / Hospitals / Pharmacies / Labs strip
+     ============================================================ -->
+
+<section
+  class="audience-strip care-values-strip"
+  aria-label="Why CareLynx - Connected, Smart and Simple"
+>
+
+  <!-- VALUE 01: CONNECTED -->
+  <div class="value-card">
+
+    <div class="value-icon" aria-hidden="true">
+      <svg viewBox="0 0 64 64" fill="none"
+           stroke="currentColor" stroke-width="2.2"
+           stroke-linecap="round" stroke-linejoin="round">
+
+        <circle cx="13" cy="17" r="5"/>
+        <circle cx="49" cy="12" r="5"/>
+        <circle cx="32" cy="34" r="6"/>
+        <circle cx="13" cy="52" r="5"/>
+        <circle cx="51" cy="51" r="5"/>
+
+        <path d="M18 19L27 30"/>
+        <path d="M44 15L36 28"/>
+        <path d="M27 38L17 48"/>
+        <path d="M37 38L47 47"/>
+
+      </svg>
+    </div>
+
+    <h3>CONNECTED</h3>
+
+    <p class="value-tagline">
+      One shared source of truth.
+    </p>
+
+    <p class="value-description">
+      Patients, doctors, pharmacies, laboratories
+      and healthcare teams working toward one
+      connected source of information.
+    </p>
+
+  </div>
+
+
+  <!-- VALUE 02: SMART -->
+  <div class="value-card">
+
+    <div class="value-icon" aria-hidden="true">
+      <svg viewBox="0 0 64 64" fill="none"
+           stroke="currentColor" stroke-width="2.1"
+           stroke-linecap="round" stroke-linejoin="round">
+
+        <!-- Brain outline -->
+        <path d="M31 15
+                 C26 9 17 13 18 21
+                 C10 23 10 34 17 37
+                 C13 45 20 53 29 49
+                 L31 45 Z"/>
+
+        <path d="M33 15
+                 C38 9 47 13 46 21
+                 C54 23 54 34 47 37
+                 C51 45 44 53 35 49
+                 L33 45 Z"/>
+
+        <!-- Neural connections -->
+        <path d="M31 20V43"/>
+        <path d="M22 25L27 30L22 35"/>
+        <path d="M42 25L37 30L42 35"/>
+        <path d="M25 43L29 39"/>
+        <path d="M39 43L35 39"/>
+
+        <!-- AI signals -->
+        <path d="M32 3V8"/>
+        <path d="M13 8L17 12"/>
+        <path d="M51 8L47 12"/>
+        <path d="M7 30H11"/>
+        <path d="M53 30H57"/>
+        <path d="M32 55V61"/>
+
+      </svg>
+    </div>
+
+    <h3>SMART</h3>
+
+    <p class="value-tagline">
+      AI-assisted insights.
+    </p>
+
+    <p class="value-description">
+      Designed to help teams identify important
+      information, spot workflow issues early
+      and make more informed decisions.
+    </p>
+
+  </div>
+
+
+  <!-- VALUE 03: SIMPLE -->
+  <div class="value-card">
+
+    <div class="value-icon" aria-hidden="true">
+      <svg viewBox="0 0 64 64" fill="none"
+           stroke="currentColor" stroke-width="2.2"
+           stroke-linecap="round" stroke-linejoin="round">
+
+        <!-- Clicking hand -->
+        <path d="M23 34V17
+                 C23 11 32 11 32 17V31"/>
+
+        <path d="M32 29
+                 C34 25 40 26 41 31
+                 C45 28 50 31 50 35
+                 C55 33 58 37 57 42
+                 L54 51
+                 C52 57 47 60 40 60
+                 H31
+                 C27 60 24 58 21 54
+                 L13 43
+                 C9 37 16 32 21 37
+                 L23 40"/>
+
+        <!-- Click sparks -->
+        <path d="M27 3V8"/>
+        <path d="M13 10L17 14"/>
+        <path d="M7 25H13"/>
+        <path d="M41 10L37 14"/>
+        <path d="M47 23H41"/>
+
+      </svg>
+    </div>
+
+    <h3>SIMPLE</h3>
+
+    <p class="value-tagline">
+      Easy screens. Less training.
+    </p>
+
+    <p class="value-description">
+      Clear, user-friendly workflows designed
+      to reduce complexity, simplify daily tasks
+      and help teams focus more on care.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- ................. END CARELYNX CORE VALUES STRIP ................. -->
+
       <!-- ........................................ END OF AUDIENCE STRIP ........................................ -->
 
       <!-- ===============================================================
@@ -241,154 +396,300 @@
       <!-- ........................................ END OF ABOUT CARELYNX ........................................ -->
 
       <!-- ============================================================
-     START: CARELYNX PHOTO GALLERY
-     Auto-scrolling healthcare photo gallery.
-     Replace sample image URLs with your own photos later.
+     
+<!-- ============================================================
+     START: INTERACTIVE CARELYNX GALLERY
+     Slow carousel, swipe, arrows and click-to-focus
      ============================================================ -->
 
-      <section class="care-gallery" id="gallery">
-        <div class="section-heading">
-          <p class="eyebrow">CARELYNX GALLERY</p>
-          <h2>Connected care, in motion.</h2>
-          <p>Bringing healthcare services together.</p>
+<section class="care-gallery" id="gallery">
+
+  <div class="section-heading">
+    <p class="eyebrow">CARELYNX GALLERY</p>
+    <h2>Connected care, in motion.</h2>
+    <p>Bringing healthcare services together.</p>
+  </div>
+
+  <div class="cl-gallery-controls">
+
+    <button
+      type="button"
+      class="cl-gallery-arrow"
+      id="clGalleryPrev"
+      aria-label="Previous gallery photo"
+    >&#8592;</button>
+
+    <span class="cl-gallery-counter" id="clGalleryCounter">
+      01 / 05
+    </span>
+
+    <button
+      type="button"
+      class="cl-gallery-arrow"
+      id="clGalleryNext"
+      aria-label="Next gallery photo"
+    >&#8594;</button>
+
+    <button
+      type="button"
+      class="cl-gallery-pause"
+      id="clGalleryPause"
+      aria-pressed="false"
+    >Pause</button>
+
+  </div>
+
+  <div
+    class="gallery-window cl-gallery-window"
+    id="clGalleryWindow"
+    role="region"
+    aria-roledescription="carousel"
+    aria-label="CareLynx healthcare photo gallery"
+    tabindex="0"
+  >
+
+    <div class="gallery-track cl-gallery-track">
+
+      <!-- PHOTO 01: HOSPITALS -->
+      <button type="button" class="gallery-card cl-gallery-card is-active"
+              aria-pressed="true">
+
+        <img
+          src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&q=85"
+          alt="Modern hospital"
+          loading="lazy"
+        />
+
+        <div class="gallery-info">
+          <h3>Hospitals</h3>
+          <p>Better healthcare coordination</p>
         </div>
+
+      </button>
+
+      <!-- PHOTO 02: PATIENTS -->
+      <button type="button" class="gallery-card cl-gallery-card"
+              aria-pressed="false">
+
+        <img
+          src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=85"
+          alt="Healthcare and patient services"
+          loading="lazy"
+        />
+
+        <div class="gallery-info">
+          <h3>Patients</h3>
+          <p>Care made more accessible</p>
+        </div>
+
+      </button>
+
+      <!-- PHOTO 03: PHARMACIES -->
+      <button type="button" class="gallery-card cl-gallery-card"
+              aria-pressed="false">
+
+        <img
+          src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=85"
+          alt="Healthcare and medicine services"
+          loading="lazy"
+        />
+
+        <div class="gallery-info">
+          <h3>Pharmacies</h3>
+          <p>Connected medicine workflows</p>
+        </div>
+
+      </button>
+
+      <!-- PHOTO 04: LABORATORIES -->
+      <button type="button" class="gallery-card cl-gallery-card"
+              aria-pressed="false">
+
+        <img
+          src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=800&q=85"
+          alt="Medical laboratory"
+          loading="lazy"
+        />
+
+        <div class="gallery-info">
+          <h3>Laboratories</h3>
+          <p>Testing and report coordination</p>
+        </div>
+
+      </button>
+
+      <!-- PHOTO 05: CONNECTED CARE -->
+      <button type="button" class="gallery-card cl-gallery-card"
+              aria-pressed="false">
+
+        <img
+          src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=800&q=85"
+          alt="Connected healthcare services"
+          loading="lazy"
+        />
+
+        <div class="gallery-info">
+          <h3>Connected Care</h3>
+          <p>One Window. One Step.</p>
+        </div>
+
+      </button>
+
+    </div>
+  </div>
+
+  <p class="cl-gallery-hint">
+    Swipe, use the arrows or select a photo to explore.
+  </p>
+
+</section>
+
+<!-- ............ END INTERACTIVE CARELYNX GALLERY ............ -->
+
+
+<!-- ============================================================
+     START: 10 PROBLEMS. ONE PLATFORM.
+     Interactive problem selector and dashboard concept
+     ============================================================ -->
+
+
+<!-- ============================================================
+     START: CARELYNX 10 PROBLEMS — PREMIUM 3D SHOWCASE
+     ============================================================ -->
+
+<section class="cl3d" id="carelynx-problems">
+
+  <div class="cl3d-inner">
+
+    <!-- SECTION HEADING -->
+
+    <header class="cl3d-heading">
+
+      <p class="cl3d-eyebrow" id="cl3dEyebrow">
+        CARELYNX SOLUTIONS
+      </p>
+
+      <h2 id="cl3dHeading">
+        10 Problems. <span>One Platform.</span>
+      </h2>
+
+      <p id="cl3dIntro">
+        Explore the healthcare workflow challenges
+        CareLynx aims to address.
+      </p>
+
+    </header>
+
+    <!-- MAIN TWO-COLUMN LAYOUT -->
+
+    <div class="cl3d-layout">
+
+      <!-- LEFT: TEN SELECTABLE PROBLEMS -->
+
+      <nav
+        class="cl3d-tabs"
+        id="cl3dTabs"
+        aria-label="Explore healthcare challenges"
+      >
+        <!-- Buttons are generated by problems-3d.js -->
+      </nav>
+
+      <!-- RIGHT: 3D ANIMATED PREVIEW -->
+
+      <div class="cl3d-detail">
+
+        <div class="cl3d-copy">
+
+          <span class="cl3d-category" id="cl3dCategory">
+            REVENUE WORKFLOW
+          </span>
+
+          <h3 id="cl3dTitle">
+            Revenue Leakage
+          </h3>
+
+          <p id="cl3dDescription" aria-live="polite">
+            Explore how clearer billing visibility
+            could help teams identify missed charges
+            and follow up.
+          </p>
+
+        </div>
+
+        <!-- Real Three.js scene is inserted here -->
 
         <div
-          class="gallery-window"
-          tabindex="0"
-          aria-label="CareLynx healthcare photo gallery"
+          class="cl3d-stage"
+          id="cl3dStage"
+          role="img"
+          aria-label="Animated 3D CareLynx workflow illustration"
         >
-          <div class="gallery-track">
-            <!-- PHOTO 1: HOSPITAL -->
-            <article class="gallery-card">
-              <img
-                src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&q=85"
-                alt="Modern hospital"
-                loading="lazy"
-              />
-              <div class="gallery-info">
-                <h3>Hospitals</h3>
-                <p>Better healthcare coordination</p>
-              </div>
-            </article>
-
-            <!-- PHOTO 2: PATIENT -->
-            <article class="gallery-card">
-              <img
-                src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=85"
-                alt="Healthcare and patient services"
-                loading="lazy"
-              />
-              <div class="gallery-info">
-                <h3>Patients</h3>
-                <p>Care made more accessible</p>
-              </div>
-            </article>
-
-            <!-- PHOTO 3: PHARMACY -->
-            <article class="gallery-card">
-              <img
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=85"
-                alt="Healthcare and medicine services"
-                loading="lazy"
-              />
-              <div class="gallery-info">
-                <h3>Pharmacies</h3>
-                <p>Connected medicine workflows</p>
-              </div>
-            </article>
-
-            <!-- PHOTO 4: LABORATORY -->
-            <article class="gallery-card">
-              <img
-                src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=800&q=85"
-                alt="Medical laboratory"
-                loading="lazy"
-              />
-              <div class="gallery-info">
-                <h3>Laboratories</h3>
-                <p>Testing and report coordination</p>
-              </div>
-            </article>
-
-            <!-- PHOTO 5: CONNECTED CARE -->
-            <article class="gallery-card">
-              <img
-                src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=800&q=85"
-                alt="Connected healthcare services"
-                loading="lazy"
-              />
-              <div class="gallery-info">
-                <h3>Connected Care</h3>
-                <p>One Window. One Step.</p>
-              </div>
-            </article>
-
-            <!-- DUPLICATE CARDS FOR SEAMLESS INFINITE SCROLL -->
-            <!-- aria-hidden prevents duplicate content being read twice. -->
-
-            <article class="gallery-card" aria-hidden="true">
-              <img
-                src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&q=85"
-                alt=""
-                loading="lazy"
-              />
-              <div class="gallery-info">
-                <h3>Hospitals</h3>
-                <p>Better healthcare coordination</p>
-              </div>
-            </article>
-
-            <article class="gallery-card" aria-hidden="true">
-              <img
-                src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=85"
-                alt=""
-                loading="lazy"
-              />
-              <div class="gallery-info">
-                <h3>Patients</h3>
-                <p>Care made more accessible</p>
-              </div>
-            </article>
-
-            <article class="gallery-card" aria-hidden="true">
-              <img
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=85"
-                alt=""
-                loading="lazy"
-              />
-              <div class="gallery-info">
-                <h3>Pharmacies</h3>
-                <p>Connected medicine workflows</p>
-              </div>
-            </article>
-
-            <article class="gallery-card" aria-hidden="true">
-              <img
-                src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=800&q=85"
-                alt=""
-                loading="lazy"
-              />
-              <div class="gallery-info">
-                <h3>Laboratories</h3>
-                <p>Testing and report coordination</p>
-              </div>
-            </article>
-
-            <article class="gallery-card" aria-hidden="true">
-              <img
-                src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=800&q=85"
-                alt=""
-                loading="lazy"
-              />
-              <div class="gallery-info">
-                <h3>Connected Care</h3>
-                <p>One Window. One Step.</p>
-              </div>
-            </article>
+          <div class="cl3d-loading">
+            Preparing 3D preview...
           </div>
         </div>
-      </section>
+
+        <!-- NAVIGATION -->
+
+        <div class="cl3d-footer">
+
+          <div class="cl3d-footer-left">
+
+            <span class="cl3d-counter" id="cl3dCounter">
+              01 / 10
+            </span>
+
+            <span class="cl3d-preview-label" id="cl3dPreviewLabel">
+              3D Concept Preview
+            </span>
+
+          </div>
+
+          <div class="cl3d-dots" id="cl3dDots">
+            <!-- Pagination dots generated by JS -->
+          </div>
+
+          <div class="cl3d-arrows">
+
+            <button
+              type="button"
+              id="cl3dPrev"
+              aria-label="Previous problem"
+            >
+              &#8592;
+            </button>
+
+            <button
+              type="button"
+              id="cl3dNext"
+              aria-label="Next problem"
+            >
+              &#8594;
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <p class="cl3d-disclaimer" id="cl3dDisclaimer">
+      Illustrative concepts only. CareLynx features
+      are under development/testing.
+      This is not a live dashboard.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- ............ END CARELYNX 10 PROBLEMS 3D SHOWCASE ............ -->
+
+
+<!-- ............ END 10 PROBLEMS. ONE PLATFORM. ............ -->
+
 
       <!-- ................ END OF CARELYNX PHOTO GALLERY ................ -->
 
@@ -521,64 +822,753 @@
           </div>
         </div>
         <!-- Cards describe the proposed experience for each user group. -->
-        <div class="solution-grid">
-          <article class="solution-card reveal">
-            <span class="card-icon">♙</span>
-            <h3>For Patients</h3>
-            <p>
-              A clearer way to engage with healthcare services and manage the
-              steps in a care journey.
-            </p>
-            <ul>
-              <li>Patient-focused information</li>
-              <li>Appointment workflow concepts</li>
-              <li>Prescription-related coordination</li>
-            </ul>
-            <a href="#contact" class="text-link">Learn more →</a>
-          </article>
-          <article class="solution-card reveal">
-            <span class="card-icon icon-blue">▦</span>
-            <h3>For Hospitals</h3>
-            <p>
-              Digital workflow concepts designed to support teams and improve
-              coordination.
-            </p>
-            <ul>
-              <li>Hospital workflow support</li>
-              <li>Patient and service coordination</li>
-              <li>Operational visibility concepts</li>
-            </ul>
-            <a href="#partners" class="text-link">Partner with us →</a>
-          </article>
-          <article class="solution-card reveal">
-            <span class="card-icon icon-violet">✚</span>
-            <h3>For Pharmacies</h3>
-            <p>
-              Explore ways pharmacy-related steps could connect with the wider
-              care journey.
-            </p>
-            <ul>
-              <li>Prescription workflow concepts</li>
-              <li>Refill coordination ideas</li>
-              <li>Connected service workflows</li>
-            </ul>
-            <a href="#partners" class="text-link">Partner with us →</a>
-          </article>
-          <article class="solution-card reveal">
-            <span class="card-icon icon-orange">⚗</span>
-            <h3>For Laboratories</h3>
-            <p>
-              Ideas for clearer coordination between testing services and
-              healthcare teams.
-            </p>
-            <ul>
-              <li>Testing workflow concepts</li>
-              <li>Result coordination ideas</li>
-              <li>Service communication</li>
-            </ul>
-            <a href="#partners" class="text-link">Partner with us →</a>
-          </article>
-        </div>
+       
+<!-- ============================================================
+     START: CARELYNX ANIMATED HEALTHCARE CARDS
+     Four lightweight SVG illustrations
+     No external images or animation libraries
+     ============================================================ -->
+
+<div class="care-role-grid">
+
+  <!-- ========================================================
+       CARD 01: PATIENTS
+       Animation: Appointment booking and confirmation
+       ======================================================== -->
+
+  <article class="care-role-card reveal">
+
+    <div class="care-role-art care-art-patient">
+
+      <svg viewBox="0 0 340 220"
+           xmlns="http://www.w3.org/2000/svg"
+           aria-hidden="true">
+
+        <!-- Background circles -->
+        <circle cx="170" cy="105" r="91"
+                fill="#CFF7F0" opacity=".65"/>
+
+        <circle cx="170" cy="105" r="68"
+                fill="#FFFFFF" opacity=".6"/>
+
+        <!-- Patient avatar -->
+        <g class="care-float-slow">
+
+          <rect x="34" y="52" width="108" height="124"
+                rx="19" fill="#FFFFFF"
+                stroke="#9DDED5" stroke-width="2"/>
+
+          <circle cx="88" cy="91" r="23"
+                  fill="#FFD8B4"/>
+
+          <path d="M65 90 Q65 59 88 62
+                   Q112 62 111 90
+                   Q100 78 88 78
+                   Q75 78 65 90"
+                fill="#173F5A"/>
+
+          <path d="M53 158 Q55 118 88 118
+                   Q122 118 124 158"
+                fill="#0C9E9C"/>
+
+          <path d="M73 122 L88 143 L103 122"
+                fill="#FFFFFF"/>
+
+          <rect x="62" y="164" width="52"
+                height="5" rx="2.5"
+                fill="#B9E7E1"/>
+
+        </g>
+
+        <!-- Appointment calendar -->
+        <g class="care-float">
+
+          <rect x="159" y="30"
+                width="145" height="151"
+                rx="17" fill="#FFFFFF"
+                stroke="#8AD5CC"
+                stroke-width="2"/>
+
+          <path d="M176 30 H287
+                   Q304 30 304 47
+                   V69 H159 V47
+                   Q159 30 176 30"
+                fill="#087E90"/>
+
+          <rect x="187" y="22"
+                width="9" height="22"
+                rx="4" fill="#0C566B"/>
+
+          <rect x="264" y="22"
+                width="9" height="22"
+                rx="4" fill="#0C566B"/>
+
+          <text x="231" y="56"
+                text-anchor="middle"
+                fill="white"
+                font-size="15"
+                font-weight="700"
+                font-family="Arial">
+            APPOINTMENT
+          </text>
+
+          <!-- Calendar dates -->
+          <g fill="#B7D8DC">
+            <rect x="178" y="87" width="23"
+                  height="20" rx="5"/>
+            <rect x="209" y="87" width="23"
+                  height="20" rx="5"/>
+            <rect x="240" y="87" width="23"
+                  height="20" rx="5"/>
+            <rect x="271" y="87" width="18"
+                  height="20" rx="5"/>
+
+            <rect x="178" y="117" width="23"
+                  height="20" rx="5"/>
+            <rect x="209" y="117" width="23"
+                  height="20" rx="5"/>
+            <rect x="271" y="117" width="18"
+                  height="20" rx="5"/>
+          </g>
+
+          <!-- Selected date -->
+          <rect class="care-date-pulse"
+                x="240" y="117"
+                width="23" height="20"
+                rx="5" fill="#0AB79F"/>
+
+          <path d="M245 127 L250 132 L258 122"
+                fill="none"
+                stroke="white"
+                stroke-width="2.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+
+          <rect x="182" y="151"
+                width="99" height="8"
+                rx="4" fill="#DDF2EF"/>
+
+        </g>
+
+        <!-- Animated booking success -->
+        <g class="care-success-pop">
+
+          <circle cx="294" cy="171" r="27"
+                  fill="#0BB99F"
+                  stroke="#FFFFFF"
+                  stroke-width="5"/>
+
+          <path d="M282 171 L291 180 L307 162"
+                fill="none"
+                stroke="#FFFFFF"
+                stroke-width="5"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+
+        </g>
+
+      </svg>
+
+      <span class="care-art-caption">
+        Appointment Connected
+      </span>
+
+    </div>
+
+    <div class="care-role-content">
+
+      <div class="care-role-number">
+        <span>01</span>
+        PATIENTS
+      </div>
+
+      <h3>For Patients</h3>
+
+      <p>
+        A clearer way to engage with healthcare services
+        and manage the steps in a care journey.
+      </p>
+
+      <ul>
+        <li>Patient-focused information</li>
+        <li>Appointment workflow concepts</li>
+        <li>Prescription-related coordination</li>
+      </ul>
+
+      <a href="#contact" class="care-role-link">
+        Learn more <span>→</span>
+      </a>
+
+    </div>
+
+  </article>
+
+  <!-- ................ END PATIENT CARD ................ -->
+
+
+  <!-- ========================================================
+       CARD 02: HOSPITALS
+       Animation: Dashboard, data bars and heartbeat
+       ======================================================== -->
+
+  <article class="care-role-card reveal">
+
+    <div class="care-role-art care-art-hospital">
+
+      <svg viewBox="0 0 340 220"
+           xmlns="http://www.w3.org/2000/svg"
+           aria-hidden="true">
+
+        <circle cx="170" cy="108" r="92"
+                fill="#D8EDFF" opacity=".7"/>
+
+        <!-- Dashboard monitor -->
+        <g class="care-float-slow">
+
+          <rect x="43" y="34"
+                width="254" height="150"
+                rx="16"
+                fill="#FFFFFF"
+                stroke="#8FBEDC"
+                stroke-width="2.5"/>
+
+          <path d="M59 34 H281
+                   Q297 34 297 50
+                   V64 H43 V50
+                   Q43 34 59 34"
+                fill="#124F79"/>
+
+          <circle cx="61" cy="49" r="4"
+                  fill="#66E0D0"/>
+
+          <circle cx="75" cy="49" r="4"
+                  fill="#B7E2E9"/>
+
+          <circle cx="89" cy="49" r="4"
+                  fill="#B7E2E9"/>
+
+          <text x="170" y="54"
+                text-anchor="middle"
+                font-family="Arial"
+                font-size="12"
+                font-weight="700"
+                fill="#FFFFFF">
+            HOSPITAL DASHBOARD
+          </text>
+
+          <!-- Left dashboard panel -->
+          <rect x="58" y="78"
+                width="108" height="87"
+                rx="10"
+                fill="#EAF6FC"/>
+
+          <text x="70" y="94"
+                fill="#265B79"
+                font-size="10"
+                font-family="Arial">
+            Patient Activity
+          </text>
+
+          <!-- Animated chart bars -->
+          <rect class="care-bar care-bar-one"
+                x="76" y="124"
+                width="15" height="29"
+                rx="4" fill="#63B6D9"/>
+
+          <rect class="care-bar care-bar-two"
+                x="100" y="112"
+                width="15" height="41"
+                rx="4" fill="#1E8FB7"/>
+
+          <rect class="care-bar care-bar-three"
+                x="124" y="101"
+                width="15" height="52"
+                rx="4" fill="#10BDAA"/>
+
+          <!-- Right panel -->
+          <rect x="177" y="78"
+                width="104" height="87"
+                rx="10"
+                fill="#EAF6FC"/>
+
+          <text x="188" y="94"
+                fill="#265B79"
+                font-size="10"
+                font-family="Arial">
+            Live Monitoring
+          </text>
+
+          <!-- Heartbeat animation -->
+          <path class="care-heart-line"
+                d="M184 127
+                   H197 L205 118
+                   L213 142 L223 109
+                   L232 127 H272"
+                fill="none"
+                stroke="#0BB9A6"
+                stroke-width="3.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+
+          <circle class="care-status-pulse"
+                  cx="267" cy="151" r="5"
+                  fill="#0BB9A6"/>
+
+          <rect x="131" y="184"
+                width="78" height="9"
+                rx="4" fill="#A5C7D9"/>
+
+          <rect x="147" y="193"
+                width="46" height="9"
+                rx="4" fill="#124F79"/>
+
+        </g>
+
+        <!-- Floating live status -->
+        <g class="care-success-pop">
+
+          <rect x="222" y="164"
+                width="93" height="29"
+                rx="14"
+                fill="#0BB9A6"/>
+
+          <circle cx="236" cy="179"
+                  r="4" fill="#FFFFFF"/>
+
+          <text x="248" y="183"
+                fill="#FFFFFF"
+                font-size="11"
+                font-weight="700"
+                font-family="Arial">
+            Connected
+          </text>
+
+        </g>
+
+      </svg>
+
+      <span class="care-art-caption">
+        Smarter Coordination
+      </span>
+
+    </div>
+
+    <div class="care-role-content">
+
+      <div class="care-role-number">
+        <span>02</span>
+        HOSPITALS
+      </div>
+
+      <h3>For Hospitals</h3>
+
+      <p>
+        Digital workflow concepts designed to support
+        teams and improve coordination.
+      </p>
+
+      <ul>
+        <li>Hospital workflow support</li>
+        <li>Patient and service coordination</li>
+        <li>Operational visibility concepts</li>
+      </ul>
+
+      <a href="#partners" class="care-role-link">
+        Partner with us <span>→</span>
+      </a>
+
+    </div>
+
+  </article>
+
+  <!-- ................ END HOSPITAL CARD ................ -->
+
+
+  <!-- ========================================================
+       CARD 03: PHARMACIES
+       Animation: Digital prescription and medicine ready
+       ======================================================== -->
+
+  <article class="care-role-card reveal">
+
+    <div class="care-role-art care-art-pharmacy">
+
+      <svg viewBox="0 0 340 220"
+           xmlns="http://www.w3.org/2000/svg"
+           aria-hidden="true">
+
+        <circle cx="170" cy="108" r="92"
+                fill="#E7E2FF" opacity=".65"/>
+
+        <!-- Medicine shelves -->
+        <g class="care-float-slow">
+
+          <rect x="36" y="49"
+                width="155" height="131"
+                rx="13"
+                fill="#FFFFFF"
+                stroke="#C2B6F1"
+                stroke-width="2"/>
+
+          <rect x="50" y="106"
+                width="127" height="7"
+                rx="3" fill="#9F93D8"/>
+
+          <rect x="50" y="158"
+                width="127" height="7"
+                rx="3" fill="#9F93D8"/>
+
+          <!-- Medicine boxes -->
+          <rect x="55" y="70"
+                width="30" height="35"
+                rx="5" fill="#12B8AB"/>
+
+          <rect x="64" y="80"
+                width="12" height="3"
+                rx="1" fill="#FFFFFF"/>
+
+          <rect x="68" y="76"
+                width="4" height="12"
+                rx="1" fill="#FFFFFF"/>
+
+          <rect x="94" y="78"
+                width="26" height="27"
+                rx="4" fill="#6D8FE5"/>
+
+          <rect x="127" y="68"
+                width="34" height="37"
+                rx="5" fill="#B09AF0"/>
+
+          <rect x="55" y="127"
+                width="32" height="29"
+                rx="5" fill="#80CFD0"/>
+
+          <rect x="96" y="121"
+                width="22" height="35"
+                rx="4" fill="#E4B55E"/>
+
+          <rect x="128" y="131"
+                width="32" height="25"
+                rx="5" fill="#5DBAAE"/>
+
+        </g>
+
+        <!-- Incoming digital prescription -->
+        <g class="care-prescription-slide">
+
+          <rect x="195" y="37"
+                width="111" height="142"
+                rx="13"
+                fill="#FFFFFF"
+                stroke="#B9A5E8"
+                stroke-width="2.5"/>
+
+          <rect x="210" y="52"
+                width="81" height="24"
+                rx="6" fill="#654BB6"/>
+
+          <text x="250" y="68"
+                text-anchor="middle"
+                font-family="Arial"
+                font-size="14"
+                font-weight="700"
+                fill="#FFFFFF">
+            Rx
+          </text>
+
+          <rect x="210" y="90"
+                width="72" height="5"
+                rx="2.5" fill="#D8D2F0"/>
+
+          <rect x="210" y="105"
+                width="59" height="5"
+                rx="2.5" fill="#D8D2F0"/>
+
+          <rect x="210" y="120"
+                width="67" height="5"
+                rx="2.5" fill="#D8D2F0"/>
+
+          <circle class="care-status-pulse"
+                  cx="252" cy="151"
+                  r="15" fill="#0BB9A6"/>
+
+          <path d="M244 151 L250 157 L261 145"
+                fill="none"
+                stroke="#FFFFFF"
+                stroke-width="3.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+
+        </g>
+
+        <!-- Ready status -->
+        <g class="care-success-pop">
+
+          <rect x="201" y="179"
+                width="106" height="27"
+                rx="13"
+                fill="#0BB9A6"/>
+
+          <text x="254" y="197"
+                text-anchor="middle"
+                fill="#FFFFFF"
+                font-family="Arial"
+                font-size="11"
+                font-weight="700">
+            Medicine Ready
+          </text>
+
+        </g>
+
+      </svg>
+
+      <span class="care-art-caption">
+        Prescription Connected
+      </span>
+
+    </div>
+
+    <div class="care-role-content">
+
+      <div class="care-role-number">
+        <span>03</span>
+        PHARMACIES
+      </div>
+
+      <h3>For Pharmacies</h3>
+
+      <p>
+        Explore ways pharmacy-related steps could connect
+        with the wider care journey.
+      </p>
+
+      <ul>
+        <li>Prescription workflow concepts</li>
+        <li>Refill coordination ideas</li>
+        <li>Connected service workflows</li>
+      </ul>
+
+      <a href="#partners" class="care-role-link">
+        Partner with us <span>→</span>
+      </a>
+
+    </div>
+
+  </article>
+
+  <!-- ................ END PHARMACY CARD ................ -->
+
+
+  <!-- ========================================================
+       CARD 04: LABORATORIES
+       Animation: Test tubes and digital report
+       ======================================================== -->
+
+  <article class="care-role-card reveal">
+
+    <div class="care-role-art care-art-lab">
+
+      <svg viewBox="0 0 340 220"
+           xmlns="http://www.w3.org/2000/svg"
+           aria-hidden="true">
+
+        <circle cx="170" cy="108" r="92"
+                fill="#FFE9D9" opacity=".7"/>
+
+        <!-- Laboratory test tube stand -->
+        <g class="care-float-slow">
+
+          <rect x="35" y="159"
+                width="161" height="13"
+                rx="6" fill="#A46B49"/>
+
+          <rect x="48" y="145"
+                width="133" height="12"
+                rx="5" fill="#D7A681"/>
+
+          <!-- Tube 1 -->
+          <path d="M65 67 V134
+                   Q65 150 79 150
+                   Q93 150 93 134
+                   V67"
+                fill="#FFFFFF"
+                stroke="#5E9FC1"
+                stroke-width="3"/>
+
+          <path class="care-liquid-one"
+                d="M68 115 H90
+                   V134 Q90 147 79 147
+                   Q68 147 68 134 Z"
+                fill="#16C3AE"
+                opacity=".85"/>
+
+          <rect x="61" y="63"
+                width="36" height="9"
+                rx="4" fill="#2E7397"/>
+
+          <!-- Tube 2 -->
+          <path d="M109 67 V134
+                   Q109 150 123 150
+                   Q137 150 137 134
+                   V67"
+                fill="#FFFFFF"
+                stroke="#5E9FC1"
+                stroke-width="3"/>
+
+          <path class="care-liquid-two"
+                d="M112 105 H134
+                   V134 Q134 147 123 147
+                   Q112 147 112 134 Z"
+                fill="#F2A65A"
+                opacity=".9"/>
+
+          <rect x="105" y="63"
+                width="36" height="9"
+                rx="4" fill="#2E7397"/>
+
+          <!-- Tube 3 -->
+          <path d="M153 67 V134
+                   Q153 150 167 150
+                   Q181 150 181 134
+                   V67"
+                fill="#FFFFFF"
+                stroke="#5E9FC1"
+                stroke-width="3"/>
+
+          <path class="care-liquid-three"
+                d="M156 120 H178
+                   V134 Q178 147 167 147
+                   Q156 147 156 134 Z"
+                fill="#7B91E8"
+                opacity=".85"/>
+
+          <rect x="149" y="63"
+                width="36" height="9"
+                rx="4" fill="#2E7397"/>
+
+          <!-- Bubbles -->
+          <circle class="care-bubble care-bubble-one"
+                  cx="79" cy="126"
+                  r="4" fill="#FFFFFF"
+                  opacity=".8"/>
+
+          <circle class="care-bubble care-bubble-two"
+                  cx="123" cy="119"
+                  r="3" fill="#FFFFFF"
+                  opacity=".8"/>
+
+        </g>
+
+        <!-- Digital test report -->
+        <g class="care-prescription-slide">
+
+          <rect x="199" y="32"
+                width="109" height="147"
+                rx="13"
+                fill="#FFFFFF"
+                stroke="#E7B58D"
+                stroke-width="2.5"/>
+
+          <rect x="213" y="47"
+                width="81" height="22"
+                rx="6" fill="#B16D3D"/>
+
+          <text x="254" y="62"
+                text-anchor="middle"
+                font-family="Arial"
+                font-size="10"
+                font-weight="700"
+                fill="#FFFFFF">
+            LAB REPORT
+          </text>
+
+          <rect x="215" y="84"
+                width="56" height="5"
+                rx="2.5" fill="#E4D7CB"/>
+
+          <rect x="215" y="98"
+                width="73" height="5"
+                rx="2.5" fill="#E4D7CB"/>
+
+          <rect x="215" y="112"
+                width="64" height="5"
+                rx="2.5" fill="#E4D7CB"/>
+
+          <path class="care-heart-line"
+                d="M216 147
+                   L231 139 L243 145
+                   L258 129 L275 136
+                   L289 122"
+                fill="none"
+                stroke="#0AB7A4"
+                stroke-width="3.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+
+        </g>
+
+        <g class="care-success-pop">
+
+          <rect x="210" y="177"
+                width="101" height="29"
+                rx="14"
+                fill="#0BB9A6"/>
+
+          <text x="260" y="196"
+                text-anchor="middle"
+                font-family="Arial"
+                font-size="11"
+                font-weight="700"
+                fill="#FFFFFF">
+            Report Ready
+          </text>
+
+        </g>
+
+      </svg>
+
+      <span class="care-art-caption">
+        Testing Connected
+      </span>
+
+    </div>
+
+    <div class="care-role-content">
+
+      <div class="care-role-number">
+        <span>04</span>
+        LABORATORIES
+      </div>
+
+      <h3>For Laboratories</h3>
+
+      <p>
+        Ideas for clearer coordination between testing
+        services and healthcare teams.
+      </p>
+
+      <ul>
+        <li>Testing workflow concepts</li>
+        <li>Result coordination ideas</li>
+        <li>Service communication</li>
+      </ul>
+
+      <a href="#partners" class="care-role-link">
+        Partner with us <span>→</span>
+      </a>
+
+    </div>
+
+  </article>
+
+  <!-- ................ END LABORATORY CARD ................ -->
+
+</div>
+
+<!-- ============================================================
+     END: CARELYNX ANIMATED HEALTHCARE CARDS
+     ============================================================ -->
+
         <!-- Important disclaimer: features are described as in development/testing. -->
         <p class="status-note">
           Note: CareLynx applications and features are under
