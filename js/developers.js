@@ -2,7 +2,7 @@
 // CARELYNX DEVELOPERS PAGE — THEME & FOOTER
 // ============================================================
 
-const devToggle = document.getElementById("devThemeToggle");
+const devToggle = document.getElementById("themeToggle");
 const devYear = document.getElementById("devYear");
 
 const savedTheme = localStorage.getItem("carelynx-theme");

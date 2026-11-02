@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!openBtn || !closeBtn || !drawer || !overlay) return;
 
-  const mobileQuery = window.matchMedia("(max-width: 768px)");
+  const mobileQuery = window.matchMedia("(max-width: 900px)");
 
   // ==========================================================
   // OPEN MENU

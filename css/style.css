@@ -3133,6 +3133,8 @@ select,
   left: 50%;
   top: 50%;
   width: 21%;
+  height: 27.3%;
+  min-width: 0;
   aspect-ratio: 1;
   transform: translate(-50%, -50%);
   border-radius: 26px;
@@ -3214,6 +3216,13 @@ select,
 @media (max-width: 560px) {
   .join-visual {
     aspect-ratio: 520 / 460;
+  }
+  .join-center {
+    height: 23.86%;
+  }
+  .join-center b {
+    font-size: clamp(0.65rem, 3.2vw, 1rem);
+    white-space: nowrap;
   }
   .join-chip {
     width: 44%;

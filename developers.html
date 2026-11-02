@@ -24,8 +24,11 @@
     <link rel="stylesheet" href="css/enhancements.css" />
     <link rel="stylesheet" href="css/hero-logo.css" />
     <link rel="stylesheet" href="css/navigation.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/carelynx-mobile-menu.css" />
     
     <script src="js/developers.js" defer></script>
+    <script src="js/carelynx-mobile-menu.js" defer></script>
   </head>
 
   <body class="dev-page">
@@ -35,7 +38,7 @@
 
       <header class="site-header">
       <!-- Header logo and company tagline. -->
-      <a class="brand" href="#home" aria-label="CareLynx home"
+      <a class="brand" href="index.html#home" aria-label="CareLynx home"
         ><img
           class="brand-logo"
           src="assets/images/carelynx-logo.png"
@@ -45,30 +48,25 @@
           ><small>One window , one step , total healthcare solutions</small></span
         ></a
       >
-      <!-- Hamburger button for small-screen navigation. -->
       <button
-        class="menu-toggle"
         type="button"
-        aria-label="Toggle navigation"
+        class="clm-open-btn"
+        id="clmOpenBtn"
+        aria-label="Open mobile menu"
+        aria-controls="clmDrawer"
         aria-expanded="false"
-        aria-controls="mainNavigation"
       >
-        ☰
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
       </button>
-      <!-- ============================================================
-     NEW MOBILE GRID MENU BUTTON
-     ============================================================ -->
-
-
-
-<!-- ............ END MOBILE MENU BUTTON ............ -->
       <!-- Page navigation, language selector and dark/light mode control. -->
       <nav class="nav-links" id="mainNavigation" aria-label="Main navigation">
-        <a href="#home" data-nav-icon="home">Home</a>
-        <a href="#about" data-nav-icon="about">About</a>
-        <a href="#platform" data-nav-icon="platform">Platform</a>
+        <a href="index.html#home" data-nav-icon="home">Home</a>
+        <a href="index.html#about" data-nav-icon="about">About</a>
+        <a href="index.html#platform" data-nav-icon="platform">Platform</a>
         <a href="partnership.html" data-nav-icon="partners">Become a Partner</a>
-        <a href="#contact" data-nav-icon="contact">Contact</a>
+        <a href="index.html#contact" data-nav-icon="contact">Contact</a>
         <!-- Language choices are connected to the external JavaScript. -->
         <select id="languageSelect" aria-label="Choose language">
           <option value="en">EN</option>
@@ -88,6 +86,85 @@
     </header>
 
     <!-- ............ END WEBSITE HEADER ............ -->
+
+    <div class="clm-overlay" id="clmOverlay"></div>
+    <aside
+      class="clm-drawer"
+      id="clmDrawer"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Mobile navigation"
+      aria-hidden="true"
+      inert
+    >
+      <div class="clm-head">
+        <a href="index.html" class="clm-brand">
+          <img src="assets/images/carelynx-logo.png" alt="CareLynx logo" />
+          <span>
+            <strong>Care<span>Lynx</span></strong>
+            <small>ONE WINDOW. ONE STEP.</small>
+          </span>
+        </a>
+        <button type="button" class="clm-close" id="clmCloseBtn" aria-label="Close mobile menu">
+          &times;
+        </button>
+      </div>
+
+      <nav class="clm-grid" aria-label="Mobile navigation links">
+        <a href="index.html#home" class="clm-card" data-page="home">
+          <span class="clm-card-icon"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10H3z" /><path d="M9 20v-8h6v8" /></svg></span>
+          <span>HOME</span>
+        </a>
+        <a href="index.html#about" class="clm-card" data-page="about">
+          <span class="clm-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 11v5M12 8h.01" /></svg></span>
+          <span>ABOUT US</span>
+        </a>
+        <a href="index.html#platform" class="clm-card" data-page="platform">
+          <span class="clm-card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" /></svg></span>
+          <span>PLATFORM</span>
+        </a>
+        <a href="partnership.html" class="clm-card" data-page="partnership">
+          <span class="clm-card-icon"><svg viewBox="0 0 24 24"><path d="M3 8h5l3 3 3-3h7" /><path d="m3 13 5 5 4-3 4 3 5-5" /><path d="m8 8 4-4 4 4" /></svg></span>
+          <span>PARTNERSHIP</span>
+        </a>
+        <a href="index.html#gallery" class="clm-card" data-page="gallery">
+          <span class="clm-card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8" cy="8" r="1.5" /><path d="m4 18 6-6 4 4 3-3 4 4" /></svg></span>
+          <span>GALLERY</span>
+        </a>
+        <a href="index.html#team" class="clm-card" data-page="team">
+          <span class="clm-card-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3" /><path d="M3 20v-2a6 6 0 0 1 12 0v2" /><path d="M17 5a3 3 0 0 1 0 6M18 14a5 5 0 0 1 3 5v1" /></svg></span>
+          <span>OUR TEAM</span>
+        </a>
+        <a href="index.html#contact" class="clm-card" data-page="contact">
+          <span class="clm-card-icon"><svg viewBox="0 0 24 24"><path d="M6 3h4l2 5-3 2a15 15 0 0 0 5 5l2-3 5 2v4a3 3 0 0 1-3 3A15 15 0 0 1 3 6a3 3 0 0 1 3-3z" /></svg></span>
+          <span>CONTACT</span>
+        </a>
+        <a href="developers.html" class="clm-card" data-page="developers">
+          <span class="clm-card-icon"><svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16" /></svg></span>
+          <span>DEVELOPED BY</span>
+        </a>
+      </nav>
+
+      <a href="index.html#contact" class="clm-cta">GET IN TOUCH <span aria-hidden="true">↗</span></a>
+
+      <div class="clm-settings">
+        <div class="clm-setting-row">
+          <span>Appearance</span>
+          <button type="button" class="clm-theme-btn" id="clmThemeBtn" aria-label="Toggle dark mode">
+            <span class="clm-theme-icon" aria-hidden="true">☾</span>
+            <span class="clm-theme-label">Dark mode</span>
+          </button>
+        </div>
+        <div class="clm-setting-row">
+          <label for="clmLanguageSelect">Language</label>
+          <select id="clmLanguageSelect">
+            <option value="en">English</option>
+            <option value="gu">ગુજરાતી</option>
+            <option value="hi">हिन्दी</option>
+          </select>
+        </div>
+      </div>
+    </aside>
 
     <!-- ============================================================
        START: DEVELOPERS HERO SECTION

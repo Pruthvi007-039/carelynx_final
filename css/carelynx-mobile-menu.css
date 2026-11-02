@@ -13,7 +13,7 @@
    MOBILE VIEW
    ============================================================ */
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   /* HEADER FIX */
 
   .site-header {
@@ -49,7 +49,12 @@
   }
 
   .site-header .brand-wordmark small {
-    display: none !important;
+    display: block !important;
+    max-width: 100%;
+    font-size: clamp(0.42rem, 2.1vw, 0.58rem) !important;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    white-space: normal;
   }
 
   /* HIDE OLD NAVIGATION */
@@ -456,7 +461,7 @@
 
 /* DESKTOP - keep original navigation */
 
-@media (min-width: 769px) {
+@media (min-width: 901px) {
   .clm-open-btn,
   .clm-overlay,
   .clm-drawer {

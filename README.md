@@ -7,9 +7,11 @@ This release fixes the **"Unable to submit. Please try again."** message seen on
 - `index.html` — homepage and contact form
 - `partnership.html` — partnership form
 - `css/style.css` — existing site styles
+- `css/responsive.css` — shared responsive layouts for all website pages
 - `js/config.js` — configure your **own** deployed Apps Script URL
 - `js/forms.js` — direct browser POST without CORS/fetch or hidden-field rejection
 - `js/script.js`, `js/partnership.js` — existing site behavior
+- `js/responsive-navigation.js` — mobile navigation for the partner and developer pages
 - `assets/images/` — official logo and favicon
 - `backend/Code.gs` — Google Apps Script code, including one-time email test
 
