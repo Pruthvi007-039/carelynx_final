@@ -9,5 +9,5 @@
  */
 window.CARELYNX_CONFIG = Object.freeze({
   emailEndpoint:
-    "https://script.google.com/macros/s/AKfycbzuD3fFhiafpqy18xTUAzGSmdH7Vp_hod0QKyZU7vNdcwTaXZTQjO9Yo27iy0djqmlx/exec", // e.g. 'https://script.google.com/macros/s/AKfy.../exec'
+    "https://script.google.com/macros/s/AKfycbyZ-GUTo2s4i8c4pOosLLXX2rkp3GHqvw3_s8V8kycxR3rv7uVnqLBrcPaF15jpIOEi/exec", // e.g. 'https://script.google.com/macros/s/AKfy.../exec'
 });
