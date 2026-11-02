@@ -8,5 +8,6 @@
  * Keep all authentication and the destination email in Code.gs.
  */
 window.CARELYNX_CONFIG = Object.freeze({
-  emailEndpoint: 'https://script.google.com/macros/s/AKfycbzrOFkI5zWMIRfXolhdmO-XAjPNfGqXzFGmi0Qio-f_shCLVb2k8eSuiv_TbraeVpAJgQ/exec'  // e.g. 'https://script.google.com/macros/s/AKfy.../exec'
+  emailEndpoint:
+    "https://script.google.com/macros/s/AKfycbzuD3fFhiafpqy18xTUAzGSmdH7Vp_hod0QKyZU7vNdcwTaXZTQjO9Yo27iy0djqmlx/exec", // e.g. 'https://script.google.com/macros/s/AKfy.../exec'
 });
