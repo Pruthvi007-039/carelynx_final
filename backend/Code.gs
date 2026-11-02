@@ -146,23 +146,147 @@ function doPost(e) {
   }
 }
 
+
 function page_(success, heading, message) {
-  // All output text is hard-coded by this script, never user HTML.
-  const icon = success ? "&#10003;" : "!";
-  const accent = success ? "#14876b" : "#bf5434";
-  const html = `<!doctype html><html lang="en"><head><meta charset="UTF-8">
+
+  // ============================================================
+  // CARELYNX SUCCESS / ERROR PAGE
+  // ============================================================
+
+  const icon = success ? '&#10003;' : '!';
+  const accent = success ? '#14876b' : '#bf5434';
+
+  // Official CareLynx website
+  const homeUrl = 'https://carelynxfinal.vercel.app/';
+
+  const html = `<!doctype html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>CareLynx Inquiry</title>
-    <style>body{margin:0;min-height:100vh;display:grid;place-items:center;
-    background:#f4f8fc;color:#183061;font-family:Arial,sans-serif;padding:20px;box-sizing:border-box}
-    .card{max-width:520px;width:100%;background:white;border-radius:20px;
-    box-shadow:0 18px 55px #15254d1c;padding:45px 30px;text-align:center}
-    .mark{margin:auto auto 24px;width:60px;height:60px;border-radius:100%;
-    background:${accent};color:white;display:grid;place-items:center;font-size:32px}
-    h1{font-size:26px;line-height:1.25}p{line-height:1.6;color:#53677a}
-    small{color:#74839a}</style></head><body><main class="card">
-    <div class="mark">${icon}</div><h1>${heading}</h1><p>${message}</p>
-    <small>CareLynx Pvt. Ltd. — One Window. One Step.</small>
-    </main></body></html>`;
-  return HtmlService.createHtmlOutput(html).setTitle("CareLynx Inquiry");
+
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #f4f8fc;
+        color: #183061;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .card {
+        max-width: 520px;
+        width: 100%;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 18px 55px #15254d1c;
+        padding: 45px 30px;
+        text-align: center;
+      }
+
+      .mark {
+        margin: 0 auto 24px;
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        background: ${accent};
+        color: white;
+        display: grid;
+        place-items: center;
+        font-size: 32px;
+      }
+
+      h1 {
+        font-size: 26px;
+        line-height: 1.25;
+      }
+
+      p {
+        line-height: 1.6;
+        color: #53677a;
+      }
+
+      .home-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 22px;
+        padding: 15px 28px;
+        border-radius: 12px;
+        background: #183061;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 0.3s ease, transform 0.3s ease;
+      }
+
+      .home-btn:hover {
+        background: #14876b;
+        transform: translateY(-3px);
+      }
+
+      .home-btn:focus-visible {
+        outline: 3px solid #14876b;
+        outline-offset: 3px;
+      }
+
+      small {
+        display: block;
+        margin-top: 25px;
+        color: #74839a;
+      }
+
+      @media (max-width: 480px) {
+        .card {
+          padding: 35px 20px;
+        }
+
+        h1 {
+          font-size: 22px;
+        }
+
+        .home-btn {
+          width: 100%;
+          box-sizing: border-box;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="card">
+
+      <div class="mark">${icon}</div>
+
+      <h1>${heading}</h1>
+
+      <p>${message}</p>
+
+      <a class="home-btn"
+         href="${homeUrl}"
+         target="_top"
+         rel="noopener">
+        &#8592; Back to Home Page
+      </a>
+
+      <small>
+        CareLynx Pvt. Ltd. — One Window. One Step.
+      </small>
+
+    </main>
+  </body>
+  </html>`;
+
+  return HtmlService.createHtmlOutput(html)
+    .setTitle('CareLynx Inquiry');
 }
+
+// ............ END CARELYNX RESPONSE PAGE ............
+

@@ -16,6 +16,7 @@
     />
     <link rel="icon" type="image/png" href="assets/images/favicon.png" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/enhancements.css" />
     <script src="js/config.js" defer></script>
     <script src="js/forms.js" defer></script>
     <script src="js/partnership.js" defer></script>
@@ -180,54 +181,157 @@
         </form>
       </section>
     </main>
-    <footer class="site-footer">
-      <div class="footer-main">
-        <a class="brand footer-brand" href="index.html"
-          ><img
-            class="brand-logo footer-logo"
-            src="assets/images/carelynx-logo.png"
-            alt="CareLynx Pvt. Ltd. logo"
-          /><span class="brand-wordmark"
-            >Care<span class="brand-accent">Lynx</span
-            ><small>One Window. One Step.</small></span
-          ></a
-        >
-        <p>Smarter connections for a more coordinated healthcare future.</p>
-        <div class="footer-links">
-          <div>
-            <b>Explore</b><a href="index.html#about">About</a
-            ><a href="index.html#platform">Platform</a>
-          </div>
-          <div>
-            <b>Connect</b><a href="index.html#partners">Partnerships</a
-            ><a href="index.html#team">Our Team</a
-            ><a href="index.html#contact">Contact</a
-            ><a href="mailto:prthvrjjdv@gmail.com">Official Email</a
-            ><a
-              href="https://www.instagram.com/carelynxpvtltd?obrf=bnB2cTd5MTd0ZzYx"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Instagram ↗</a
-            ><a
+    <!-- ===================== START: WEBSITE FOOTER ===================== -->
+
+
+
+    <footer class="site-footer" id="footer">
+      <div class="footer-container">
+        <!-- SECTION 1: COMPANY BRAND -->
+        <div class="footer-brand-area">
+          <a href="index.html" class="footer-brand-logo">
+            <img
+              src="assets/images/carelynx-logo.png"
+              alt="CareLynx Logo"
+              class="footer-logo"
+            />
+          </a>
+
+          <h3>CareLynx</h3>
+          <p class="footer-tagline">One Window. One Step.</p>
+
+          <p class="footer-description">
+            Connecting patients, hospitals, pharmacies and laboratories through
+            one integrated healthcare platform. Making healthcare coordination
+            simpler and more accessible.
+          </p>
+
+          <!-- SOCIAL MEDIA -->
+          <div class="footer-socials">
+            <a
               href="https://www.linkedin.com/company/carelynx-pvt-ltd/"
               target="_blank"
               rel="noopener noreferrer"
-              >LinkedIn ↗</a
+              aria-label="CareLynx LinkedIn"
             >
-          </div>
-          <div>
-            <b>Legal</b><a href="index.html#privacy-note">Privacy policy*</a
-            ><a href="index.html#privacy-note">Terms*</a>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452z"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="https://www.instagram.com/carelynxpvtltd?obrf=bnB2cTd5MTd0ZzYx"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="CareLynx Instagram"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle
+                  cx="17.5"
+                  cy="6.5"
+                  r="1"
+                  fill="currentColor"
+                  stroke="none"
+                />
+              </svg>
+            </a>
+
+            <a href="mailto:carelynx2026@gmail.com" aria-label="Email CareLynx">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m2 6 10 7 10-7" />
+              </svg>
+            </a>
           </div>
         </div>
+
+        <!-- ............ END COMPANY BRAND ............ -->
+
+        <!-- SECTION 2: COMPANY QUICK LINKS -->
+        <div class="footer-column footer-company">
+          <h4>Company</h4>
+
+          <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#team">Our Team</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+          </ul>
+        </div>
+
+        <!-- ............ END COMPANY LINKS ............ -->
+
+        <!-- SECTION 3: EXPLORE -->
+        <div class="footer-column footer-explore">
+          <h4>Explore</h4>
+
+          <ul>
+            <li><a href="index.html#platform">Platform</a></li>
+            <li><a href="partnership.html">Partnerships</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+             <!-- Developers Page -->
+  <li><a href="developers.html">Developed By</a></li>
+          </ul>
+        </div>
+
+        <!-- ............ END EXPLORE ............ -->
+
+        <!-- SECTION 4: POLICY AND CONTACT -->
+        <div class="footer-column footer-policy">
+          <h4>Policy &amp; Contact</h4>
+
+          <ul>
+            <li><a href="legal/privacy.html">Privacy Policy</a></li>
+            <li><a href="legal/terms.html">Terms of Use</a></li>
+            <li><a href="legal/data-protection.html">Data Protection</a></li>
+            <li>
+              <a href="mailto:carelynx2026@gmail.com">Email Us</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ............ END POLICY AND CONTACT ............ -->
       </div>
+
+      <!-- SECTION 5: COPYRIGHT -->
+
+      <!-- ============================================================
+     SECTION 5: FOOTER COPYRIGHT & DEVELOPERS
+     Developer photos, names and copyright details.
+     ============================================================ -->
+
       <div class="footer-bottom">
-        <span
-          >© <span id="year"></span> CareLynx Pvt. Ltd. All rights
-          reserved.</span
-        ><span>*Publish reviewed legal documents before launch.</span
-        ><a href="index.html">Back to homepage ↑</a>
-      </div>
+        <!-- Copyright information -->
+        <div class="footer-copyright">
+          <p>
+            &copy; <span id="footerYear">2026</span>
+            CareLynx Pvt. Ltd. All rights reserved.
+          </p>
+        </div>
+
+       
+      <!-- ............ END FOOTER COPYRIGHT & DEVELOPERS ............ -->
     </footer>
   </body>
 </html>

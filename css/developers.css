@@ -1,0 +1,788 @@
+/* ============================================================
+   CARELYNX — DEVELOPERS PAGE
+   ============================================================ */
+
+:root {
+  --dev-bg: #f5f8fc;
+  --dev-surface: #ffffff;
+  --dev-text: #162d50;
+  --dev-muted: #65748a;
+  --dev-primary: #173b67;
+  --dev-accent: #0e9e91;
+  --dev-border: #e3eaf2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.dev-page {
+  margin: 0;
+  background: var(--dev-bg);
+  color: var(--dev-text);
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.dev-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 6%;
+  background: var(--dev-surface);
+  border-bottom: 1px solid var(--dev-border);
+}
+
+.dev-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--dev-text);
+}
+
+.dev-brand img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.dev-brand strong {
+  display: block;
+  font-size: 24px;
+}
+
+.dev-brand strong span {
+  color: var(--dev-accent);
+}
+
+.dev-brand small {
+  display: block;
+  font-size: 10px;
+  color: var(--dev-muted);
+}
+
+.dev-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.dev-nav a {
+  color: var(--dev-text);
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.25s;
+}
+
+.dev-nav a:hover {
+  color: var(--dev-accent);
+}
+
+#devThemeToggle {
+  border: 1px solid var(--dev-border);
+  background: var(--dev-surface);
+  color: var(--dev-text);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+/* ............ END HEADER ............ */
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.dev-hero {
+  padding: 95px 20px 70px;
+  text-align: center;
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(14, 158, 145, 0.13),
+    transparent 60%
+  );
+}
+
+.dev-eyebrow,
+.dev-section-heading > span {
+  display: inline-block;
+  color: var(--dev-accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.dev-hero h1 {
+  max-width: 900px;
+  margin: 20px auto;
+  font-size: clamp(34px, 5vw, 60px);
+  line-height: 1.18;
+  letter-spacing: -1.5px;
+}
+
+.dev-hero h1 span {
+  display: block;
+  color: var(--dev-accent);
+}
+
+.dev-hero p {
+  max-width: 640px;
+  margin: auto;
+  color: var(--dev-muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* ............ END HERO ............ */
+
+/* ============================================================
+   DEVELOPER CARDS
+   ============================================================ */
+
+.dev-section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 20px 24px 100px;
+}
+
+.dev-section-heading {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.dev-section-heading h2 {
+  margin: 10px 0;
+  font-size: clamp(27px, 3vw, 38px);
+}
+
+.dev-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.dev-card {
+  min-width: 0;
+  overflow: hidden;
+  background: var(--dev-surface);
+  border: 1px solid var(--dev-border);
+  border-radius: 24px;
+  box-shadow: 0 16px 48px rgba(16, 43, 77, 0.06);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.dev-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 22px 55px rgba(16, 43, 77, 0.12);
+}
+
+.dev-photo {
+  height: 350px;
+  overflow: hidden;
+  background: #e8eef5;
+}
+
+.dev-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 25%;
+  transition: transform 0.5s;
+}
+
+.dev-card:hover .dev-photo img {
+  transform: scale(1.035);
+}
+
+.dev-card-content {
+  padding: 30px;
+}
+
+.dev-role {
+  color: var(--dev-accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.dev-card-content h3 {
+  margin: 12px 0;
+  font-size: 26px;
+}
+
+.dev-card-content p {
+  color: var(--dev-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.dev-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+  padding: 12px 18px;
+  background: var(--dev-primary);
+  color: #fff;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.dev-social-link:hover {
+  background: var(--dev-accent);
+}
+
+/* ............ END DEVELOPER CARDS ............ */
+
+/* ============================================================
+   BACK TO HOME SECTION
+   ============================================================ */
+
+.dev-back-section {
+  padding: 65px 20px 80px;
+  text-align: center;
+  background: var(--dev-surface);
+}
+
+.dev-back-section h2 {
+  font-size: 30px;
+  margin: 0 0 12px;
+}
+
+.dev-back-section p {
+  color: var(--dev-muted);
+  line-height: 1.8;
+}
+
+.dev-home-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 28px;
+  border-radius: 12px;
+  background: var(--dev-primary);
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.dev-home-btn:hover {
+  background: var(--dev-accent);
+}
+
+/* ............ END BACK SECTION ............ */
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.dev-footer {
+  background: #102b4b;
+  color: #fff;
+  padding: 55px 6% 22px;
+}
+
+.dev-footer-main {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.dev-footer-brand h3 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.dev-footer-brand p {
+  color: #b5c5d6;
+  font-size: 13px;
+}
+
+.dev-footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dev-footer-links h4 {
+  margin: 0 0 6px;
+}
+
+.dev-footer-links a {
+  color: #b5c5d6;
+  font-size: 13px;
+}
+
+.dev-footer-links a:hover,
+.dev-footer-links a[aria-current="page"] {
+  color: #52d5c3;
+}
+
+.dev-footer-bottom {
+  max-width: 1100px;
+  margin: 40px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+  color: #b5c5d6;
+  font-size: 12px;
+}
+
+/* ............ END FOOTER ............ */
+
+/* ============================================================
+   DARK MODE
+   ============================================================ */
+
+body.dev-page.dark {
+  --dev-bg: #0c1727;
+  --dev-surface: #14263d;
+  --dev-text: #f0f6ff;
+  --dev-muted: #b2c1d2;
+  --dev-primary: #245785;
+  --dev-border: #30435a;
+}
+
+body.dev-page.dark .dev-photo {
+  background: #223a52;
+}
+
+/* ............ END DARK MODE ............ */
+
+/* ============================================================
+   MOBILE RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .dev-header {
+    flex-direction: column;
+    padding: 16px 5%;
+  }
+
+  .dev-nav {
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .dev-nav a {
+    font-size: 12px;
+  }
+
+  .dev-hero {
+    padding: 65px 20px 50px;
+  }
+
+  .dev-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dev-section {
+    padding: 15px 18px 70px;
+  }
+
+  .dev-photo {
+    height: 330px;
+  }
+
+  .dev-card-content {
+    padding: 24px;
+  }
+
+  .dev-footer-main {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  .dev-photo {
+    height: 270px;
+  }
+
+  .dev-card-content h3 {
+    font-size: 22px;
+  }
+
+  .dev-hero h1 {
+    letter-spacing: -0.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+
+/* ............ END DEVELOPERS PAGE ............ */
+
+/* ============================================================
+   START: DEVELOPERS PAGE — PROFESSIONAL HORIZONTAL LAYOUT
+   ============================================================ */
+
+/* SECTION */
+
+.dev-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 24px 110px;
+}
+
+.dev-section-heading {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.dev-section-heading h2 {
+  margin: 12px 0;
+  font-size: clamp(28px, 3vw, 42px);
+  letter-spacing: -1px;
+}
+
+.dev-team-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 12px;
+  padding: 9px 18px;
+  border: 1px solid var(--dev-border);
+  border-radius: 100px;
+  background: var(--dev-surface);
+  color: var(--dev-muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.dev-count-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--dev-accent);
+}
+
+/* ============================================================
+   GRID — ONE PROFILE PER ROW
+   ============================================================ */
+
+.dev-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 36px;
+}
+
+/* ============================================================
+   DEVELOPER CARD
+   ============================================================ */
+
+.dev-card {
+  display: grid;
+  grid-template-columns: minmax(0, 42%) minmax(0, 58%);
+  min-width: 0;
+  overflow: hidden;
+
+  background: var(--dev-surface);
+  border: 1px solid var(--dev-border);
+  border-radius: 26px;
+
+  box-shadow: 0 16px 50px rgba(16, 43, 77, 0.07);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.dev-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 65px rgba(16, 43, 77, 0.12);
+}
+
+/* ============================================================
+   LEFT SIDE — DEVELOPER PHOTO
+   ============================================================ */
+
+.dev-photo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  overflow: hidden;
+  background: #e8eef5;
+}
+
+.dev-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 25%;
+  transition: transform 0.5s ease;
+}
+
+.dev-card:hover .dev-photo img {
+  transform: scale(1.035);
+}
+
+/* ============================================================
+   RIGHT SIDE — DEVELOPER INFORMATION
+   ============================================================ */
+
+.dev-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 42px 46px;
+}
+
+.dev-card-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.dev-role {
+  color: var(--dev-accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.dev-number {
+  padding: 7px 12px;
+  border: 1px solid var(--dev-border);
+  border-radius: 8px;
+  color: var(--dev-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.dev-card-content h3 {
+  margin: 0 0 20px;
+  font-size: clamp(25px, 2.7vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  line-height: 1.25;
+  color: var(--dev-text);
+}
+
+.dev-description {
+  margin: 0 0 14px;
+  color: var(--dev-muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* ============================================================
+   SKILLS / TAGS
+   ============================================================ */
+
+.dev-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.dev-skills span {
+  padding: 8px 13px;
+  border: 1px solid var(--dev-border);
+  border-radius: 8px;
+  background: var(--dev-bg);
+  color: var(--dev-text);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* ============================================================
+   LINKEDIN BUTTON
+   ============================================================ */
+
+.dev-card-actions {
+  margin-top: 25px;
+}
+
+.dev-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 13px 20px;
+  border-radius: 10px;
+  background: var(--dev-primary);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.dev-social-link:hover {
+  background: var(--dev-accent);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   TABLET RESPONSIVE
+   ============================================================ */
+
+@media (min-width: 769px) and (max-width: 1000px) {
+  .dev-card {
+    grid-template-columns: minmax(0, 40%) minmax(0, 60%);
+  }
+
+  .dev-photo {
+    min-height: 380px;
+  }
+
+  .dev-card-content {
+    padding: 30px;
+  }
+}
+
+/* ============================================================
+   MOBILE — PHOTO TOP, DETAILS BELOW
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .dev-section {
+    padding: 20px 18px 70px;
+  }
+
+  .dev-section-heading {
+    margin-bottom: 30px;
+  }
+
+  .dev-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .dev-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+  }
+
+  .dev-photo {
+    width: 100%;
+    height: 340px;
+    min-height: 0;
+    flex-shrink: 0;
+  }
+
+  .dev-card-content {
+    width: 100%;
+    padding: 28px 24px 32px;
+  }
+
+  .dev-card-content h3 {
+    font-size: 26px;
+  }
+
+  .dev-description {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 420px) {
+  .dev-photo {
+    height: 280px;
+  }
+
+  .dev-card-content {
+    padding: 24px 20px 28px;
+  }
+
+  .dev-card-content h3 {
+    font-size: 23px;
+  }
+
+  .dev-card-top {
+    align-items: flex-start;
+  }
+
+  .dev-social-link {
+    width: 100%;
+  }
+
+  .dev-card-actions {
+    width: 100%;
+  }
+}
+
+/* ============================================================
+   DARK MODE SUPPORT
+   ============================================================ */
+
+body.dev-page.dark .dev-card {
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.16);
+}
+
+body.dev-page.dark .dev-skills span {
+  background: var(--dev-bg);
+}
+
+body.dev-page.dark .dev-photo {
+  background: #223a52;
+}
+
+/* ............ END DEVELOPERS HORIZONTAL LAYOUT ............ */
+/* ============================================================
+   DEVELOPER PORTFOLIO LINK
+   ============================================================ */
+
+.dev-portfolio-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  color: var(--dev-accent);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    gap 0.3s ease,
+    color 0.3s ease;
+}
+
+.dev-portfolio-link:hover {
+  gap: 14px;
+  text-decoration: underline;
+}
+
+/* ............ END PORTFOLIO LINK ............ */

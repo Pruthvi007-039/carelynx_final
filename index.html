@@ -39,6 +39,9 @@
     <link rel="stylesheet" href="css/navigation.css" />
     <link rel="stylesheet" href="css/hero-logo.css" />
     <link rel="stylesheet" href="css/enhancements.css" />
+
+    <link rel="stylesheet" href="css/carelynx-mobile-menu.css">
+<script src="js/carelynx-mobile-menu.js" defer></script>
     <!-- Configuration/settings used by the website. -->
     <script src="js/config.js" defer></script>
     <!-- Contact and enquiry form JavaScript. -->
@@ -99,6 +102,26 @@
       >
         ☰
       </button>
+      <!-- ============================================================
+     NEW MOBILE GRID MENU BUTTON
+     ============================================================ -->
+
+<button
+  type="button"
+  class="clm-open-btn"
+  id="clmOpenBtn"
+  aria-label="Open mobile menu"
+  aria-controls="clmDrawer"
+  aria-expanded="false"
+>
+  <svg viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="2"
+       stroke-linecap="round">
+    <path d="M4 7h16M4 12h16M4 17h16"/>
+  </svg>
+</button>
+
+<!-- ............ END MOBILE MENU BUTTON ............ -->
       <!-- Page navigation, language selector and dark/light mode control. -->
       <nav class="nav-links" id="mainNavigation" aria-label="Main navigation">
         <a href="#home" data-nav-icon="home">Home</a>
@@ -123,6 +146,198 @@
         </button>
       </nav>
     </header>
+    
+<!-- ============================================================
+     START: CARELYNX MOBILE GRID DRAWER
+     ============================================================ -->
+
+<div class="clm-overlay" id="clmOverlay"></div>
+
+<aside
+  class="clm-drawer"
+  id="clmDrawer"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Mobile navigation"
+  aria-hidden="true"
+  inert
+>
+
+  <!-- HEADER: LOGO AND CLOSE BUTTON -->
+  <div class="clm-head">
+
+    <a href="index.html" class="clm-brand">
+      <img
+        src="assets/images/carelynx-logo.png"
+        alt="CareLynx logo"
+      />
+
+      <span>
+        <strong>Care<span>Lynx</span></strong>
+        <small>ONE WINDOW. ONE STEP.</small>
+      </span>
+    </a>
+
+    <button
+      type="button"
+      class="clm-close"
+      id="clmCloseBtn"
+      aria-label="Close mobile menu"
+    >
+      &times;
+    </button>
+
+  </div>
+
+  <!-- ................................ END HEADER ................................ -->
+
+
+  <!-- ============================================================
+       MOBILE NAVIGATION GRID
+       ============================================================ -->
+
+  <nav class="clm-grid" aria-label="Mobile navigation links">
+
+    <!-- HOME -->
+    <a href="index.html#home" class="clm-card" data-page="home">
+      <span class="clm-card-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="m3 10 9-7 9 7v10H3z"/>
+          <path d="M9 20v-8h6v8"/>
+        </svg>
+      </span>
+      <span>HOME</span>
+    </a>
+
+    <!-- ABOUT -->
+    <a href="index.html#about" class="clm-card" data-page="about">
+      <span class="clm-card-icon">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 11v5M12 8h.01"/>
+        </svg>
+      </span>
+      <span>ABOUT US</span>
+    </a>
+
+    <!-- PLATFORM -->
+    <a href="index.html#platform" class="clm-card" data-page="platform">
+      <span class="clm-card-icon">
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="3" width="7" height="7" rx="1"/>
+          <rect x="14" y="3" width="7" height="7" rx="1"/>
+          <rect x="3" y="14" width="7" height="7" rx="1"/>
+          <rect x="14" y="14" width="7" height="7" rx="1"/>
+        </svg>
+      </span>
+      <span>PLATFORM</span>
+    </a>
+
+    <!-- PARTNERSHIP -->
+    <a href="partnership.html" class="clm-card" data-page="partnership">
+      <span class="clm-card-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M3 8h5l3 3 3-3h7"/>
+          <path d="m3 13 5 5 4-3 4 3 5-5"/>
+          <path d="m8 8 4-4 4 4"/>
+        </svg>
+      </span>
+      <span>PARTNERSHIP</span>
+    </a>
+
+    <!-- GALLERY -->
+    <a href="index.html#gallery" class="clm-card" data-page="gallery">
+      <span class="clm-card-icon">
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <circle cx="8" cy="8" r="1.5"/>
+          <path d="m4 18 6-6 4 4 3-3 4 4"/>
+        </svg>
+      </span>
+      <span>GALLERY</span>
+    </a>
+
+    <!-- OUR TEAM -->
+    <a href="index.html#team" class="clm-card" data-page="team">
+      <span class="clm-card-icon">
+        <svg viewBox="0 0 24 24">
+          <circle cx="9" cy="8" r="3"/>
+          <path d="M3 20v-2a6 6 0 0 1 12 0v2"/>
+          <path d="M17 5a3 3 0 0 1 0 6"/>
+          <path d="M18 14a5 5 0 0 1 3 5v1"/>
+        </svg>
+      </span>
+      <span>OUR TEAM</span>
+    </a>
+
+    <!-- CONTACT -->
+    <a href="index.html#contact" class="clm-card" data-page="contact">
+      <span class="clm-card-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M6 3h4l2 5-3 2a15 15 0 0 0 5 5l2-3 5 2v4a3 3 0 0 1-3 3A15 15 0 0 1 3 6a3 3 0 0 1 3-3z"/>
+        </svg>
+      </span>
+      <span>CONTACT</span>
+    </a>
+
+  </nav>
+
+  <!-- ................................ END GRID ................................ -->
+
+
+  <!-- CONTACT BUTTON -->
+  <a href="index.html#contact" class="clm-cta">
+    GET IN TOUCH <span aria-hidden="true">↗</span>
+  </a>
+
+
+  <!-- ============================================================
+       THEME AND LANGUAGE CONTROLS
+       ============================================================ -->
+
+  <div class="clm-settings">
+
+    <div class="clm-setting-row">
+      <span>Appearance</span>
+
+      <button
+        type="button"
+        class="clm-theme-btn"
+        id="clmThemeBtn"
+        aria-label="Toggle dark mode"
+      >
+        <span class="clm-theme-icon" aria-hidden="true">☾</span>
+        <span class="clm-theme-label">Dark mode</span>
+      </button>
+    </div>
+
+    <div class="clm-setting-row">
+      <label for="clmLanguageSelect">Language</label>
+
+      <select id="clmLanguageSelect">
+        <option value="en">English</option>
+        <option value="gu">ગુજરાતી</option>
+        <option value="hi">हिन्दी</option>
+      </select>
+    </div>
+
+  </div>
+
+  <!-- ................................ END SETTINGS ................................ -->
+
+
+  <!-- DEVELOPERS PAGE LINK -->
+  <a href="developers.html" class="clm-developer">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16"/>
+    </svg>
+    Developed By
+  </a>
+
+</aside>
+
+<!-- ............ END CARELYNX MOBILE GRID DRAWER ............ -->
+
     <!-- ........................................ END OF WEBSITE HEADER / NAVIGATION ........................................ -->
 
     <!-- ===============================================================
@@ -1641,13 +1856,39 @@ else run itself
           >
         </div>
         <!-- Decorative partner ecosystem graphic. -->
-        <div class="join-visual reveal" aria-hidden="true">
-          <div class="join-orbit"></div>
-          <div class="join-center">✚<b>CareLynx</b></div>
-          <span class="join-chip chip-hospital">▦ Hospital</span
-          ><span class="join-chip chip-pharmacy">✚ Pharmacy</span
-          ><span class="join-chip chip-lab">⚗ Laboratory</span>
-        </div>
+        <!-- Partner network graphic: replaces the old <div class="join-visual"> block. -->
+<div class="join-visual reveal">
+  <svg class="join-lines" viewBox="0 0 520 400" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <circle class="join-ring" cx="260" cy="200" r="92" />
+    <path id="jl-hospital" class="join-line" d="M104 80 L215 152" />
+    <path id="jl-pharmacy" class="join-line" d="M416 80 L305 152" />
+    <path id="jl-lab" class="join-line" d="M260 324 L260 255" />
+    <circle class="join-dot" r="4"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#jl-hospital" /></animateMotion></circle>
+    <circle class="join-dot" r="4"><animateMotion dur="2.8s" begin="0.6s" repeatCount="indefinite"><mpath href="#jl-pharmacy" /></animateMotion></circle>
+    <circle class="join-dot" r="4"><animateMotion dur="2.2s" begin="1.1s" repeatCount="indefinite"><mpath href="#jl-lab" /></animateMotion></circle>
+  </svg>
+
+  <div class="join-center">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M4 12h16" /></svg>
+    <b>CareLynx</b>
+  </div>
+
+  <div class="join-chip chip-hospital">
+    <span class="chip-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V7l8-4 8 4v14M9 21v-6h6v6M12 8v3M10.5 9.5h3" /></svg></span>
+    <strong>Hospitals</strong>
+    <small>Faster referrals and shared records</small>
+  </div>
+  <div class="join-chip chip-pharmacy">
+    <span class="chip-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 20.5a4.95 4.95 0 0 1-7-7l10-10a4.95 4.95 0 0 1 7 7zM8.5 8.5l7 7" /></svg></span>
+    <strong>Pharmacies</strong>
+    <small>Smoother prescription fulfilment</small>
+  </div>
+  <div class="join-chip chip-lab">
+    <span class="chip-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6L4.5 19a1.5 1.5 0 0 0 1.3 2h12.4a1.5 1.5 0 0 0 1.3-2L14 9V3M7.5 15h9" /></svg></span>
+    <strong>Laboratories</strong>
+    <small>Quicker test orders and results</small>
+  </div>
+</div>
       </section>
       <!-- ........................................ END OF PARTNERSHIP CALL TO ACTION ........................................ -->
 
@@ -1712,8 +1953,8 @@ else run itself
             <span>✉</span>
             <div>
               <b>Official email</b
-              ><a class="contact-email" href="mailto:carelynx20@gmail.com"
-                >carelynx20@gmail.com</a
+              ><a class="contact-email" href="mailto:carelynx2026@gmail.com"
+                >carelynx2026@gmail.com</a
               >
             </div>
           </div>
@@ -1780,16 +2021,11 @@ else run itself
     </main>
     <!-- ........................................ END OF MAIN PAGE CONTENT ........................................ -->
 
-    <!-- ===============================================================
-         START: WEBSITE FOOTER
-         PURPOSE: Footer branding, navigation, social links and legal notes.
-         =============================================================== -->
+    
+       
     <!-- ===================== START: WEBSITE FOOTER ===================== -->
 
-    <!-- ============================================================
-     START: CARELYNX PROFESSIONAL FOOTER
-     Responsive footer with brand, links, policies and socials
-     ============================================================ -->
+
 
     <footer class="site-footer" id="footer">
       <div class="footer-container">
@@ -1854,7 +2090,7 @@ else run itself
               </svg>
             </a>
 
-            <a href="mailto:carelynx20@gmail.com" aria-label="Email CareLynx">
+            <a href="mailto:carelynx2026@gmail.com" aria-label="Email CareLynx">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -1896,6 +2132,8 @@ else run itself
             <li><a href="partnership.html">Partnerships</a></li>
             <li><a href="index.html#faq">FAQ</a></li>
             <li><a href="index.html#contact">Contact</a></li>
+             <!-- Developers Page -->
+  <li><a href="developers.html">Developed By</a></li>
           </ul>
         </div>
 
@@ -1934,78 +2172,25 @@ else run itself
           </p>
         </div>
 
-        <!-- Developer credits -->
-        
-<!-- ============================================================
-     FOOTER DEVELOPERS — CLICKABLE LINKEDIN PROFILES
-     ============================================================ -->
-
-<div class="footer-developers">
-  <p class="developer-heading">Developed by</p>
-
-  <div class="developer-list">
-
-    <!-- Developer 1: Pruthviraj Jadav -->
-    <a
-      href="https://www.linkedin.com/in/pruthviraj-jadav-705442337"
-      class="developer-person developer-link"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Visit Pruthviraj Jadav's LinkedIn profile"
-    >
-      <div class="developer-avatar">
-        <img
-          src="assets/images/3.jpeg"
-          alt="Pruthviraj Jadav"
-          loading="lazy"
-          onerror="this.style.display='none'"
-        />
-        <span class="developer-initials">PJ</span>
-      </div>
-
-      <span class="developer-name">Pruthviraj Jadav</span>
-    </a>
-
-    <span class="developer-and">&amp;</span>
-
-    <!-- Developer 2: Manav Rabadiya -->
-    <a
-      href="https://www.linkedin.com/in/manav-rabadiya"
-      class="developer-person developer-link"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Visit Manav Rabadiya's LinkedIn profile"
-    >
-      <div class="developer-avatar">
-        <img
-          src="assets/images/4.jpeg"
-          alt="Manav Rabadiya"
-          loading="lazy"
-          onerror="this.style.display='none'"
-        />
-        <span class="developer-initials">MR</span>
-      </div>
-
-      <span class="developer-name">Manav Rabadiya</span>
-    </a>
-
-  </div>
-</div>
-
-<!-- ............ END FOOTER DEVELOPERS ............ -->
-
+       
       <!-- ............ END FOOTER COPYRIGHT & DEVELOPERS ............ -->
     </footer>
 
-    <!-- ................ END OF CARELYNX FOOTER ................ -->
+
 
     <!-- ........................................ END OF WEBSITE FOOTER ........................................ -->
+
+
     <!-- ===============================================================
          START: TOAST NOTIFICATION
          PURPOSE: A status message area controlled by JavaScript.
          =============================================================== -->
+
+
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
     <!-- ........................................ END OF TOAST NOTIFICATION ........................................ -->
-    <!-- Lottie load diagnostics and fallback handling. -->
+
+
   </body>
 </html>

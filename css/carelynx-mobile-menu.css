@@ -1,0 +1,536 @@
+/* ============================================================
+   CARELYNX MOBILE GRID DRAWER
+   Reference-inspired navigation
+   ============================================================ */
+
+.clm-open-btn,
+.clm-overlay,
+.clm-drawer {
+  display: none;
+}
+
+/* ============================================================
+   MOBILE VIEW
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* HEADER FIX */
+
+  .site-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-direction: row !important;
+    gap: 12px !important;
+    min-height: 70px !important;
+    height: auto !important;
+    padding: 10px 16px !important;
+  }
+
+  .site-header > .brand {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    max-width: calc(100% - 65px);
+    margin: 0 !important;
+  }
+
+  .site-header .brand-logo {
+    width: 43px !important;
+    height: 43px !important;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .site-header .brand-wordmark {
+    font-size: 19px !important;
+    line-height: 1.1;
+  }
+
+  .site-header .brand-wordmark small {
+    display: none !important;
+  }
+
+  /* HIDE OLD NAVIGATION */
+
+  .site-header > .menu-toggle,
+  .site-header > .nav-links {
+    display: none !important;
+  }
+
+  /* NEW HAMBURGER */
+
+  .site-header .clm-open-btn {
+    display: grid !important;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    padding: 10px;
+    border: 1px solid #dce5f0;
+    border-radius: 12px;
+    background: #fff;
+    color: #0b2048;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .clm-open-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* BACKDROP */
+
+  .clm-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 19998;
+    background: rgba(4, 13, 30, 0.65);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 0.3s,
+      visibility 0.3s;
+  }
+
+  .clm-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* SLIDE-IN DRAWER */
+
+  .clm-drawer {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 19999;
+    width: min(355px, calc(100vw - 40px));
+    height: 100vh;
+    height: 100dvh;
+    padding: 22px 16px 25px;
+    background: #fff;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    box-shadow: -10px 0 35px rgba(0, 0, 0, 0.12);
+    transform: translateX(105%);
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      transform 0.35s ease,
+      visibility 0.35s;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .clm-drawer.is-open {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  body.clm-lock {
+    overflow: hidden !important;
+  }
+
+  /* ============================================================
+     DRAWER HEADER
+     ============================================================ */
+
+  .clm-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .clm-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    text-decoration: none;
+  }
+
+  .clm-brand img {
+    width: 47px;
+    height: 47px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .clm-brand strong {
+    display: block;
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #0b2048;
+  }
+
+  .clm-brand strong span {
+    color: #079b90;
+  }
+
+  .clm-brand small {
+    display: block;
+    margin-top: 6px;
+    color: #8392a8;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+  }
+
+  .clm-close {
+    display: grid;
+    place-items: center;
+    width: 37px;
+    height: 37px;
+    flex-shrink: 0;
+    padding: 0;
+    border: 1px solid #e0e7f0;
+    border-radius: 12px;
+    background: #fff;
+    color: #152d50;
+    font-size: 27px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  /* ============================================================
+     TWO-COLUMN GRID
+     ============================================================ */
+
+  .clm-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+  }
+
+  .clm-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 85px;
+    padding: 12px 8px;
+    border: 1px solid #e1e9f3;
+    border-radius: 16px;
+    background: #fff;
+    color: #203453;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.65px;
+    text-align: center;
+    text-decoration: none;
+    transition:
+      background 0.25s,
+      transform 0.25s,
+      box-shadow 0.25s;
+  }
+
+  .clm-card:hover {
+    transform: translateY(-2px);
+    background: #f3f7fd;
+  }
+
+  .clm-card-icon {
+    display: grid;
+    place-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 12px;
+    background: #edf3ff;
+    color: #2563eb;
+  }
+
+  .clm-card-icon svg {
+    width: 19px;
+    height: 19px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* ACTIVE GRID CARD */
+
+  .clm-card.is-active {
+    background: #091e47;
+    border-color: #091e47;
+    color: #fff;
+    box-shadow: 0 6px 12px rgba(9, 30, 71, 0.2);
+  }
+
+  .clm-card.is-active .clm-card-icon {
+    background: #344d75;
+    color: #fff;
+  }
+
+  /* ============================================================
+     CONTACT BUTTON
+     ============================================================ */
+
+  .clm-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 46px;
+    margin-top: 16px;
+    border-radius: 14px;
+    background: #091e47;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 5px 12px rgba(9, 30, 71, 0.15);
+  }
+
+  .clm-cta:hover {
+    background: #087f85;
+  }
+
+  /* ============================================================
+     THEME + LANGUAGE CONTROLS
+     ============================================================ */
+
+  .clm-settings {
+    display: grid;
+    gap: 14px;
+    margin-top: 22px;
+    padding-top: 17px;
+    border-top: 1px solid #e7edf4;
+  }
+
+  .clm-setting-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    color: #344b69;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .clm-theme-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-width: 115px;
+    min-height: 39px;
+    padding: 7px 11px;
+    border: 1px solid #dce6f0;
+    border-radius: 12px;
+    background: #f3f7fd;
+    color: #24476b;
+    font: inherit;
+    font-size: 11px;
+    cursor: pointer;
+  }
+
+  .clm-theme-icon {
+    font-size: 21px;
+    line-height: 1;
+  }
+
+  .clm-setting-row select {
+    width: 115px;
+    min-height: 39px;
+    padding: 7px;
+    border: 1px solid #dce6f0;
+    border-radius: 10px;
+    background: #f3f7fd;
+    color: #24476b;
+    font-family: inherit;
+    font-size: 11px;
+  }
+
+  /* DEVELOPERS LINK */
+
+  .clm-developer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 20px;
+    color: #3460a5;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .clm-developer svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+  }
+
+  /* ============================================================
+     DARK MODE
+     ============================================================ */
+
+  body.dark .clm-drawer,
+  body.dark-mode .clm-drawer,
+  [data-theme="dark"] .clm-drawer {
+    background: #101e32;
+  }
+
+  body.dark .clm-brand strong,
+  body.dark-mode .clm-brand strong,
+  [data-theme="dark"] .clm-brand strong {
+    color: #fff;
+  }
+
+  body.dark .clm-card,
+  body.dark-mode .clm-card,
+  [data-theme="dark"] .clm-card {
+    background: #1b2d46;
+    color: #e7efff;
+    border-color: #34465f;
+  }
+
+  body.dark .clm-card.is-active,
+  body.dark-mode .clm-card.is-active,
+  [data-theme="dark"] .clm-card.is-active {
+    background: #0c4770;
+    color: #fff;
+    border-color: #0c4770;
+  }
+
+  body.dark .clm-close,
+  body.dark-mode .clm-close,
+  [data-theme="dark"] .clm-close {
+    background: #1b2d46;
+    color: #fff;
+    border-color: #34465f;
+  }
+
+  body.dark .clm-settings,
+  body.dark-mode .clm-settings,
+  [data-theme="dark"] .clm-settings {
+    border-top-color: #34465f;
+  }
+
+  body.dark .clm-setting-row,
+  body.dark-mode .clm-setting-row,
+  [data-theme="dark"] .clm-setting-row {
+    color: #e4ecf8;
+  }
+
+  body.dark .clm-theme-btn,
+  body.dark .clm-setting-row select,
+  body.dark-mode .clm-theme-btn,
+  body.dark-mode .clm-setting-row select,
+  [data-theme="dark"] .clm-theme-btn,
+  [data-theme="dark"] .clm-setting-row select {
+    background: #253c56;
+    border-color: #496078;
+    color: #fff;
+  }
+
+  body.dark .site-header .clm-open-btn,
+  body.dark-mode .site-header .clm-open-btn,
+  [data-theme="dark"] .site-header .clm-open-btn {
+    background: #20384e;
+    color: #fff;
+    border-color: #496078;
+  }
+
+  /* ............ END DARK MODE ............ */
+}
+
+/* DESKTOP - keep original navigation */
+
+@media (min-width: 769px) {
+  .clm-open-btn,
+  .clm-overlay,
+  .clm-drawer {
+    display: none !important;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .clm-overlay,
+  .clm-drawer,
+  .clm-card {
+    transition: none;
+  }
+}
+
+/* ............ END CARELYNX MOBILE GRID MENU ............ */
+
+/* ============================================================
+   CARELYNX MOBILE HAMBURGER MENU LOGO FIX
+   LIGHT MODE + DARK MODE
+   ============================================================ */
+
+/* Mobile drawer logo */
+.clm-drawer .clm-brand img {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+
+  background: #ffffff;
+  padding: 5px;
+  border-radius: 13px;
+
+  box-sizing: border-box;
+  flex-shrink: 0;
+  filter: none;
+}
+
+/* Prevent logo clipping */
+.clm-drawer .clm-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  overflow: visible;
+}
+
+/* Dark mode logo */
+body.dark-mode .clm-drawer .clm-brand img,
+html[data-theme="dark"] .clm-drawer .clm-brand img,
+body[data-theme="dark"] .clm-drawer .clm-brand img {
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  filter: none;
+}
+
+/* Small mobile screens */
+@media (max-width: 400px) {
+  .clm-drawer .clm-brand img {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    padding: 4px;
+    border-radius: 11px;
+  }
+
+  .clm-drawer .clm-brand {
+    gap: 10px;
+  }
+}
+
+/* ............ END MOBILE MENU LOGO FIX ............ */

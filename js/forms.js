@@ -10,7 +10,7 @@
   const configured = String(window.CARELYNX_CONFIG?.emailEndpoint || "").trim();
   const validUrl =
     /^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(
-      configured,
+      configured, 
     );
 
   document

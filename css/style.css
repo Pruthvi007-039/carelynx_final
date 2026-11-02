@@ -1742,13 +1742,7 @@ body.dark .form-card label {
 .join-intro > .button {
   margin-top: 28px;
 }
-.join-visual {
-  min-height: 320px;
-  position: relative;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-}
+
 .join-orbit {
   width: 270px;
   height: 270px;
@@ -3102,5 +3096,157 @@ select,
     width: 16px !important;
     height: 16px !important;
     flex-shrink: 0 !important;
+  }
+}
+
+/* Replace the old rules from .join-visual through .chip-lab in style.css with this. */
+.join-visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 520 / 400;
+  min-height: 0;
+}
+.join-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.join-ring {
+  fill: none;
+  stroke: #55e4d548;
+  stroke-width: 1;
+  stroke-dasharray: 3 5;
+}
+.join-line {
+  fill: none;
+  stroke: #55e4d58c;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+}
+.join-dot {
+  fill: #5ce7d9;
+}
+.join-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 21%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 26px;
+  background: linear-gradient(135deg, #5ce7d9, #10b8ad);
+  color: #07314b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  box-shadow: 0 0 55px #12c5b238;
+  z-index: 1;
+}
+.join-center svg {
+  width: 38%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.join-center b {
+  font: 800 1rem Manrope;
+}
+.join-chip {
+  position: absolute;
+  width: 40%;
+  background: #f8fcfff2;
+  color: #142b45;
+  border: 1px solid #bdeee8;
+  border-radius: 14px;
+  padding: 12px 14px;
+  box-shadow: 0 12px 25px #00132925;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 10px;
+  align-items: center;
+}
+.join-chip strong {
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+.join-chip small {
+  grid-column: 1 / -1;
+  margin-top: 6px;
+  font-size: 0.74rem;
+  line-height: 1.45;
+  color: #4a6275;
+}
+.chip-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #5ce7d9;
+  display: grid;
+  place-items: center;
+}
+.chip-icon svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: #07314b;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.chip-hospital {
+  top: 0;
+  left: 0;
+}
+.chip-pharmacy {
+  top: 0;
+  right: 0;
+}
+.chip-lab {
+  bottom: 0;
+  left: 30%;
+}
+
+@media (max-width: 560px) {
+  .join-visual {
+    aspect-ratio: 520 / 460;
+  }
+  .join-chip {
+    width: 44%;
+    padding: 10px 11px;
+  }
+  .chip-lab {
+    left: 28%;
+  }
+  .join-chip small {
+    font-size: 0.7rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .join-dot {
+    display: none;
+  }
+}
+/* Add after the rules in join-visual.css */
+.chip-management {
+  top: 0;
+  left: 0;
+}
+.chip-billing {
+  top: 0;
+  right: 0;
+}
+.chip-patients {
+  bottom: 0;
+  left: 30%;
+}
+
+@media (max-width: 560px) {
+  .chip-patients {
+    left: 28%;
   }
 }
